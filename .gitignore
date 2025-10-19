@@ -1,0 +1,25 @@
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Secrets
+.env
+
+# Generated outputs
+*.apkg
+*.txt
+*.json
+summaries/
+reduced/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS system files
+.DS_Store
+Thumbs.db
