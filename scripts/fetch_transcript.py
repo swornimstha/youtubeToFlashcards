@@ -3,18 +3,26 @@
 fetch_transcript.py
 ------------------
 Fetches a YouTube transcript and saves it as JSON.
-Output filename is based on the video ID for clarity.
+Output filename is based on the sanitized YouTube title.
 """
 
 import argparse
 from pathlib import Path
+import json
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import JSONFormatter
 
-def fetch_transcript(video_id: str, output_dir: Path, languages=None):
-    """Fetch transcript from YouTube and save as JSON."""
+def fetch_transcript(video_id: str, output_dir: Path, title_json: Path, languages=None):
+    """Fetch transcript from YouTube and save as JSON using sanitized title."""
     if languages is None:
         languages = ["en"]
+
+    # Load sanitized title from JSON
+    with open(title_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        title = data.get("title")
+    if not title:
+        raise ValueError(f"No title found in {title_json}")
 
     ytt_api = YouTubeTranscriptApi()
     transcript = ytt_api.fetch(video_id, languages=languages, preserve_formatting=True)
@@ -23,7 +31,7 @@ def fetch_transcript(video_id: str, output_dir: Path, languages=None):
     json_formatted = formatter.format_transcript(transcript, indent=2)
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = output_dir / f"{video_id}_transcript.json"
+    output_file = output_dir / f"{title}_transcript.json"
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(json_formatted)
 
@@ -38,10 +46,11 @@ def main():
                         help="Directory to save JSON transcript (default: transcripts/)")
     parser.add_argument("--lang", "-l", nargs="+", default=["en"],
                         help="Preferred language(s), e.g., en fr es (default: en)")
-
+    parser.add_argument("--title_json", default="currentTitle.json",
+                        help="Path to JSON containing sanitized title")
     args = parser.parse_args()
-    fetch_transcript(args.video_id, Path(args.output_dir), args.lang)
+
+    fetch_transcript(args.video_id, Path(args.output_dir), Path(args.title_json), args.lang)
 
 if __name__ == "__main__":
     main()
-

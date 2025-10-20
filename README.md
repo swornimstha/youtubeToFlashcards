@@ -125,4 +125,3 @@ This performs the following steps:
 
 MIT License — free to use, modify, and distribute.
 
-```

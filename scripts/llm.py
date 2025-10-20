@@ -3,13 +3,13 @@
 llm.py
 -----------------------------
 Summarize each chunk of a reduced transcript individually,
-without extra headers, save chunk summaries, and combine all
-into a full concatenated summary.
-Uses clear high school-level language and preserves all points.
+save chunk summaries and a full concatenated summary using
+sanitized YouTube title for filenames.
 """
 
 import os
 import time
+import json
 from pathlib import Path
 from dotenv import load_dotenv
 from mistralai import Mistral
@@ -22,7 +22,7 @@ if not API_KEY:
     raise ValueError("MISTRAL_API_KEY not found in environment variables")
 
 client = Mistral(api_key=API_KEY)
-MODEL_NAME = "mistral-small-latest"  # can switch to "mistral-large-latest"
+MODEL_NAME = "mistral-medium-latest"
 
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
@@ -86,17 +86,33 @@ def save_chunk_summaries(chunk_summaries: List[str], output_dir: Path) -> Path:
 
     return full_summary_file
 
+def load_sanitized_title(title_json: Path) -> str:
+    """Load sanitized YouTube title from JSON file"""
+    if not title_json.exists():
+        raise FileNotFoundError(f"Title JSON file not found: {title_json}")
+    with open(title_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    title = data.get("title")
+    if not title:
+        raise ValueError(f"No 'title' field found in {title_json}")
+    return title
+
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(description="Summarize chunks and save summaries.")
+    parser = argparse.ArgumentParser(description="Summarize chunks and save summaries using sanitized title")
     parser.add_argument("reduced_file", help="Path to reduced transcript file")
-    parser.add_argument("--outdir", default="summaries", help="Directory to save chunk summaries")
-    parser.add_argument("--sleep", type=float, default=1.0, help="Seconds to wait between API calls")
+    parser.add_argument("--title_json", default="currentTitle.json",
+                        help="Path to JSON containing sanitized title")
+    parser.add_argument("--outdir", default="summaries",
+                        help="Directory to save chunk summaries")
+    parser.add_argument("--sleep", type=float, default=1.0,
+                        help="Seconds to wait between API calls")
     args = parser.parse_args()
 
+    title = load_sanitized_title(Path(args.title_json))
     reduced_path = Path(args.reduced_file)
-    output_dir = Path(args.outdir) / reduced_path.stem
+    output_dir = Path(args.outdir) / title
     output_dir.mkdir(parents=True, exist_ok=True)
 
     chunks = read_chunks(reduced_path)
@@ -119,3 +135,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

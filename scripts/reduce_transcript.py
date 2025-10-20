@@ -5,7 +5,7 @@ reduce_transcript.py
 Preprocess and condense a YouTube transcript JSON file into coherent,
 LLM-ready text chunks for summarization and flashcard generation.
 
-Output: reduced/<original_filename>_reduced.txt
+Output: reduced/<sanitized_title>_transcript_reduced.txt
 """
 
 import json
@@ -30,10 +30,7 @@ def clean_text(text: str) -> str:
 
 
 def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> List[str]:
-    """
-    Merge short caption segments into paragraphs.
-    Segments within `max_gap` seconds are considered continuous.
-    """
+    """Merge short caption segments into paragraphs."""
     merged, buffer = [], []
     last_start = None
 
@@ -56,9 +53,7 @@ def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> Li
 
 
 def chunk_text(paragraphs: List[str], max_words: int = 600) -> List[str]:
-    """
-    Group paragraphs into chunks of roughly `max_words`.
-    """
+    """Group paragraphs into chunks of roughly `max_words`."""
     chunks, current, count = [], [], 0
 
     for para in paragraphs:
@@ -75,11 +70,10 @@ def chunk_text(paragraphs: List[str], max_words: int = 600) -> List[str]:
     return chunks
 
 
-def save_chunks(chunks: List[str], input_path: Path, out_dir: Path) -> Path:
-    """Save chunks to reduced/<filename>_reduced.txt"""
+def save_chunks(chunks: List[str], title: str, out_dir: Path) -> Path:
+    """Save chunks to reduced/<sanitized_title>_transcript_reduced.txt"""
     out_dir.mkdir(parents=True, exist_ok=True)
-    base_name = input_path.stem
-    out_path = out_dir / f"{base_name}_reduced.txt"
+    out_path = out_dir / f"{title}_transcript_reduced.txt"
 
     with open(out_path, "w", encoding="utf-8") as f:
         for i, chunk in enumerate(chunks, 1):
@@ -98,15 +92,24 @@ def main():
     parser.add_argument("input_json", help="Path to transcript JSON file")
     parser.add_argument("--words", type=int, default=600, help="Approximate words per chunk")
     parser.add_argument("--outdir", default="reduced", help="Directory to save reduced text files")
+    parser.add_argument("--title_json", default="currentTitle.json",
+                        help="Path to JSON containing sanitized title")
     args = parser.parse_args()
 
     input_path = Path(args.input_json)
     out_dir = Path(args.outdir)
 
+    # Read sanitized title from JSON
+    with open(args.title_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        title = data.get("title")
+    if not title:
+        raise ValueError(f"No title found in {args.title_json}")
+
     transcript = load_transcript(input_path)
     paragraphs = merge_segments(transcript)
     chunks = chunk_text(paragraphs, max_words=args.words)
-    save_chunks(chunks, input_path, out_dir)
+    save_chunks(chunks, title, out_dir)
 
 
 if __name__ == "__main__":
