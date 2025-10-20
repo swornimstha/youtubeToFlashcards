@@ -118,9 +118,7 @@ This performs the following steps:
 
 * Add logging for each video and pipeline stage.
 * Support batch processing of playlists.
-* Enhance chunk retry and error handling.
-* Improve deck naming with auto-sanitized titles.
-
+* Make proper UI
 ---
 
 ## License
