@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 youtubeTitle.py
@@ -22,9 +21,7 @@ def sanitize_filename(name: str) -> str:
     - Remove invalid filename characters: \ / : * ? " < > |
     - Replace spaces with underscores
     """
-    # Remove invalid characters
     name = re.sub(r'[\\/:"*?<>|]+', '', name)
-    # Replace whitespace with underscores
     name = re.sub(r'\s+', '_', name)
     return name
 

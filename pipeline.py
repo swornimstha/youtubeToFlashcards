@@ -17,6 +17,8 @@ import subprocess
 from pathlib import Path
 import argparse
 import json
+import re
+from urllib.parse import urlparse, parse_qs
 
 
 def run_command(cmd_list):
@@ -24,6 +26,28 @@ def run_command(cmd_list):
     print(f"[+] Running: {' '.join(cmd_list)}")
     subprocess.run(cmd_list, check=True)
     print("[+] Completed successfully.\n")
+
+
+def extract_video_id(url_or_id: str) -> str:
+    """
+    Extract the YouTube video ID from a URL or return it directly if already an ID.
+    Supports formats:
+        - https://www.youtube.com/watch?v=VIDEO_ID
+        - https://youtu.be/VIDEO_ID
+        - VIDEO_ID directly
+    """
+    if re.fullmatch(r'[a-zA-Z0-9_-]{11}', url_or_id):
+        return url_or_id
+
+    parsed = urlparse(url_or_id)
+    if parsed.hostname in ('www.youtube.com', 'youtube.com'):
+        qs = parse_qs(parsed.query)
+        if 'v' in qs:
+            return qs['v'][0]
+    elif parsed.hostname in ('youtu.be',):
+        return parsed.path.lstrip('/')
+
+    raise ValueError(f"Cannot extract YouTube video ID from '{url_or_id}'")
 
 
 def ensure_title(video_id: str, title_json: Path, scripts_dir: Path) -> str:
@@ -46,6 +70,12 @@ def ensure_title(video_id: str, title_json: Path, scripts_dir: Path) -> str:
         return title
 
 
+def create_dirs(*dirs):
+    """Ensure that directories exist."""
+    for d in dirs:
+        d.mkdir(parents=True, exist_ok=True)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="YouTube → Anki deck pipeline. Steps can be started or ended mid-pipeline.",
@@ -59,7 +89,7 @@ def main():
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    parser.add_argument("video_id", help="YouTube video ID to process")
+    parser.add_argument("video", help="YouTube video URL or ID to process")
     parser.add_argument("--title_json", default="currentTitle.json", help="JSON file with sanitized title")
     parser.add_argument("--start_step", type=int, default=1, choices=range(1, 6),
                         help="Step number to start at (1–5)")
@@ -67,7 +97,7 @@ def main():
                         help="Step number to end at (1–5)")
     args = parser.parse_args()
 
-    video_id = args.video_id
+    video_id = extract_video_id(args.video)
     title_json = Path(args.title_json)
     start_step = args.start_step
     end_step = args.end_step
@@ -75,7 +105,7 @@ def main():
     if start_step > end_step:
         raise ValueError(f"start_step ({start_step}) cannot be greater than end_step ({end_step})")
 
-    # Remove old title JSON to avoid stale titles
+    # Remove stale title JSON
     if title_json.exists():
         print(f"[!] Removing old title JSON: {title_json}")
         title_json.unlink()
@@ -87,7 +117,10 @@ def main():
     flashcards_dir = Path("flashcardTxt")
     apkg_dir = Path("apkg")
 
-    # Ensure we have a fresh sanitized title
+    # Ensure directories exist
+    create_dirs(transcripts_dir, reduced_dir, summaries_dir, flashcards_dir, apkg_dir)
+
+    # Fetch sanitized title
     title = ensure_title(video_id, title_json, scripts_dir)
 
     transcript_file = transcripts_dir / f"{title}_transcript.json"
@@ -95,6 +128,9 @@ def main():
     summary_subdir = summaries_dir / title
     full_summary_file = summary_subdir / "full_summary.txt"
     flashcard_file = flashcards_dir / f"{title}.txt"
+
+    # Ensure summary subdir exists
+    create_dirs(summary_subdir)
 
     # Step 1: Fetch transcript
     if start_step <= 1 <= end_step:

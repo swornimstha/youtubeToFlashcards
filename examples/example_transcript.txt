@@ -1,0 +1,4187 @@
+[
+  {
+    "text": "good morning and welcome to llt 121",
+    "start": 2.3,
+    "duration": 8.709
+  },
+  {
+    "text": "classical mythology when we last left",
+    "start": 6.42,
+    "duration": 6.57
+  },
+  {
+    "text": "off in our last meeting we were",
+    "start": 11.009,
+    "duration": 5.431
+  },
+  {
+    "text": "discussing anthropomorphism versus",
+    "start": 12.99,
+    "duration": 8.07
+  },
+  {
+    "text": "animism as to rival conceptions if you",
+    "start": 16.44,
+    "duration": 8.069
+  },
+  {
+    "text": "will of deity it sounds very profound to",
+    "start": 21.06,
+    "duration": 7.74
+  },
+  {
+    "text": "say rival concepts of deity but simply",
+    "start": 24.509,
+    "duration": 10.681
+  },
+  {
+    "text": "stated animism is deification the making",
+    "start": 28.8,
+    "duration": 10.5
+  },
+  {
+    "text": "into gods and goddesses of forces of",
+    "start": 35.19,
+    "duration": 7.92
+  },
+  {
+    "text": "nature and other inanimate objects",
+    "start": 39.3,
+    "duration": 9.32
+  },
+  {
+    "text": "the Sun the moon the earth and what not",
+    "start": 43.11,
+    "duration": 9.33
+  },
+  {
+    "text": "as I tried to suggest in our last",
+    "start": 48.62,
+    "duration": 7.81
+  },
+  {
+    "text": "meeting the animistic conception of",
+    "start": 52.44,
+    "duration": 8.66
+  },
+  {
+    "text": "deity is usually not always but usually",
+    "start": 56.43,
+    "duration": 7.769
+  },
+  {
+    "text": "the conception that a civilization",
+    "start": 61.1,
+    "duration": 7.809
+  },
+  {
+    "text": "starts out with the example I offered",
+    "start": 64.199,
+    "duration": 6.81
+  },
+  {
+    "text": "you last time was of the clock that",
+    "start": 68.909,
+    "duration": 5.311
+  },
+  {
+    "text": "mysterious round disc on your left with",
+    "start": 71.009,
+    "duration": 5.281
+  },
+  {
+    "text": "the things that move round and round and",
+    "start": 74.22,
+    "duration": 7.259
+  },
+  {
+    "text": "round it's obviously exerting a force on",
+    "start": 76.29,
+    "duration": 8.189
+  },
+  {
+    "text": "your life just what it is though we",
+    "start": 81.479,
+    "duration": 4.591
+  },
+  {
+    "text": "don't understand we just miss it by",
+    "start": 84.479,
+    "duration": 5.151
+  },
+  {
+    "text": "saying it's a goddess the goddess clock",
+    "start": 86.07,
+    "duration": 10.86
+  },
+  {
+    "text": "as human civilizations develop as human",
+    "start": 89.63,
+    "duration": 10.09
+  },
+  {
+    "text": "civilizations become more at ease with",
+    "start": 96.93,
+    "duration": 6.149
+  },
+  {
+    "text": "their surroundings as they become more",
+    "start": 99.72,
+    "duration": 10.189
+  },
+  {
+    "text": "adept at building houses communications",
+    "start": 103.079,
+    "duration": 11.761
+  },
+  {
+    "text": "agriculture and the like they begin to",
+    "start": 109.909,
+    "duration": 8.831
+  },
+  {
+    "text": "almost insensibly see their own place in",
+    "start": 114.84,
+    "duration": 6.83
+  },
+  {
+    "text": "the world moving up just a little bit",
+    "start": 118.74,
+    "duration": 5.489
+  },
+  {
+    "text": "they're more confident of who they are",
+    "start": 121.67,
+    "duration": 5.739
+  },
+  {
+    "text": "and what they're doing here and they",
+    "start": 124.229,
+    "duration": 5.671
+  },
+  {
+    "text": "begin to wish to exert a little bit of",
+    "start": 127.409,
+    "duration": 6.091
+  },
+  {
+    "text": "control if you will on the inanimate",
+    "start": 129.9,
+    "duration": 4.44
+  },
+  {
+    "text": "object",
+    "start": 133.5,
+    "duration": 3.3
+  },
+  {
+    "text": "and the forces of nature which rule",
+    "start": 134.34,
+    "duration": 6.03
+  },
+  {
+    "text": "their lives it would be nice if we could",
+    "start": 136.8,
+    "duration": 6.83
+  },
+  {
+    "text": "make the Sun come out and lead at will",
+    "start": 140.37,
+    "duration": 6.81
+  },
+  {
+    "text": "it would be nice for my yard at least if",
+    "start": 143.63,
+    "duration": 5.02
+  },
+  {
+    "text": "somebody could make it rain at least",
+    "start": 147.18,
+    "duration": 7.83
+  },
+  {
+    "text": "once this month before it's over if you",
+    "start": 148.65,
+    "duration": 9.6
+  },
+  {
+    "text": "believe in an animistic conception of",
+    "start": 155.01,
+    "duration": 6.57
+  },
+  {
+    "text": "gods and goddesses it doesn't matter the",
+    "start": 158.25,
+    "duration": 6.05
+  },
+  {
+    "text": "Sun is a big ball of fire in the sky",
+    "start": 161.58,
+    "duration": 5.64
+  },
+  {
+    "text": "there's no point in praying to it",
+    "start": 164.3,
+    "duration": 5.32
+  },
+  {
+    "text": "because it is a big ball of fire in the",
+    "start": 167.22,
+    "duration": 9.41
+  },
+  {
+    "text": "sky if however we start attributing",
+    "start": 169.62,
+    "duration": 10.86
+  },
+  {
+    "text": "anthropomorphic characteristics to the",
+    "start": 176.63,
+    "duration": 6.939
+  },
+  {
+    "text": "big ball of fire in the sky to the brown",
+    "start": 180.48,
+    "duration": 8.97
+  },
+  {
+    "text": "stuff that we walk on below we begin to",
+    "start": 183.569,
+    "duration": 8.971
+  },
+  {
+    "text": "be able to exert a little control over",
+    "start": 189.45,
+    "duration": 9.9
+  },
+  {
+    "text": "it moreover in this entire passage of",
+    "start": 192.54,
+    "duration": 8.43
+  },
+  {
+    "text": "today's lecture would make an excellent",
+    "start": 199.35,
+    "duration": 5.15
+  },
+  {
+    "text": "beginning for an essay examination I",
+    "start": 200.97,
+    "duration": 6.329
+  },
+  {
+    "text": "don't know how much more blatant I can",
+    "start": 204.5,
+    "duration": 7.78
+  },
+  {
+    "text": "be I've already mentioned that cultures",
+    "start": 207.299,
+    "duration": 8.641
+  },
+  {
+    "text": "tend to develop anthropomorphic",
+    "start": 212.28,
+    "duration": 7.38
+  },
+  {
+    "text": "conceptions of deity one because it",
+    "start": 215.94,
+    "duration": 6.53
+  },
+  {
+    "text": "affords them a little bit of control",
+    "start": 219.66,
+    "duration": 7.68
+  },
+  {
+    "text": "over the deities if I attribute human",
+    "start": 222.47,
+    "duration": 8.62
+  },
+  {
+    "text": "thought processes human wishes and",
+    "start": 227.34,
+    "duration": 8.25
+  },
+  {
+    "text": "desires to the rain to the Sun to the",
+    "start": 231.09,
+    "duration": 8.84
+  },
+  {
+    "text": "earth to that clock up on the wall",
+    "start": 235.59,
+    "duration": 8.399
+  },
+  {
+    "text": "it gives me an angle to try to persuade",
+    "start": 239.93,
+    "duration": 10.899
+  },
+  {
+    "text": "it to do what I want it also this",
+    "start": 243.989,
+    "duration": 10.47
+  },
+  {
+    "text": "anthropomorphic conception also tends to",
+    "start": 250.829,
+    "duration": 7.051
+  },
+  {
+    "text": "help us explain an account for goings-on",
+    "start": 254.459,
+    "duration": 6.09
+  },
+  {
+    "text": "in the universe that we wouldn't know",
+    "start": 257.88,
+    "duration": 5.94
+  },
+  {
+    "text": "otherwise if you have ever been caught",
+    "start": 260.549,
+    "duration": 5.641
+  },
+  {
+    "text": "out in a really great thunderstorm while",
+    "start": 263.82,
+    "duration": 3.3
+  },
+  {
+    "text": "you're out on the road",
+    "start": 266.19,
+    "duration": 3.18
+  },
+  {
+    "text": "or just out in the middle of nowhere",
+    "start": 267.12,
+    "duration": 6.75
+  },
+  {
+    "text": "with no shelter over your head it is to",
+    "start": 269.37,
+    "duration": 6.96
+  },
+  {
+    "text": "this day not all that hard to believe",
+    "start": 273.87,
+    "duration": 4.799
+  },
+  {
+    "text": "that the gods and goddesses are angry",
+    "start": 276.33,
+    "duration": 5.46
+  },
+  {
+    "text": "somebody upstairs is really mad at you",
+    "start": 278.669,
+    "duration": 8.161
+  },
+  {
+    "text": "and letting you have it and if it's an",
+    "start": 281.79,
+    "duration": 9.14
+  },
+  {
+    "text": "animistic thunder and lightning deity",
+    "start": 286.83,
+    "duration": 7.95
+  },
+  {
+    "text": "it's just happening you can't make it",
+    "start": 290.93,
+    "duration": 7.03
+  },
+  {
+    "text": "stop but if there is a thunder god or a",
+    "start": 294.78,
+    "duration": 7.38
+  },
+  {
+    "text": "thunder goddess oh the thunder god the",
+    "start": 297.96,
+    "duration": 7.98
+  },
+  {
+    "text": "thunder goddess is angry if I pray the",
+    "start": 302.16,
+    "duration": 5.52
+  },
+  {
+    "text": "right thing or make the right sacrifice",
+    "start": 305.94,
+    "duration": 5.16
+  },
+  {
+    "text": "or do the right ritual maybe it will",
+    "start": 307.68,
+    "duration": 9.69
+  },
+  {
+    "text": "stop the anthropomorphic conception of",
+    "start": 311.1,
+    "duration": 9.18
+  },
+  {
+    "text": "deity a couple things more I can say",
+    "start": 317.37,
+    "duration": 5.419
+  },
+  {
+    "text": "about it",
+    "start": 320.28,
+    "duration": 2.509
+  },
+  {
+    "text": "number one doesn't automatically replace",
+    "start": 322.85,
+    "duration": 6.49
+  },
+  {
+    "text": "an animistic conception of deity by this",
+    "start": 326.82,
+    "duration": 7.52
+  },
+  {
+    "text": "I mean it's not as if on January 7th",
+    "start": 329.34,
+    "duration": 9.38
+  },
+  {
+    "text": "1401 BC all ancient Greeks will",
+    "start": 334.34,
+    "duration": 7.12
+  },
+  {
+    "text": "automatically switch over from an",
+    "start": 338.72,
+    "duration": 4.93
+  },
+  {
+    "text": "animistic conception of gods and",
+    "start": 341.46,
+    "duration": 5.66
+  },
+  {
+    "text": "goddesses to an anthropomorphic",
+    "start": 343.65,
+    "duration": 6.06
+  },
+  {
+    "text": "conception of gods and goddesses",
+    "start": 347.12,
+    "duration": 5.62
+  },
+  {
+    "text": "you just don't treat one in for the",
+    "start": 349.71,
+    "duration": 9.32
+  },
+  {
+    "text": "other the transition from animism to",
+    "start": 352.74,
+    "duration": 9.48
+  },
+  {
+    "text": "anthropomorphic conception of deity in",
+    "start": 359.03,
+    "duration": 8.109
+  },
+  {
+    "text": "Greek mythology is gradual we don't have",
+    "start": 362.22,
+    "duration": 8.819
+  },
+  {
+    "text": "any written record of it so to speak we",
+    "start": 367.139,
+    "duration": 5.851
+  },
+  {
+    "text": "don't have any ancient Greeks who tell",
+    "start": 371.039,
+    "duration": 5.431
+  },
+  {
+    "text": "us yes I was raised animistic praying to",
+    "start": 372.99,
+    "duration": 6.239
+  },
+  {
+    "text": "trees and shrubs and now that I've come",
+    "start": 376.47,
+    "duration": 5.16
+  },
+  {
+    "text": "to Zeus I really it doesn't work that",
+    "start": 379.229,
+    "duration": 7.681
+  },
+  {
+    "text": "way we're forced to go into the myths go",
+    "start": 381.63,
+    "duration": 8.37
+  },
+  {
+    "text": "into the stories themselves take them",
+    "start": 386.91,
+    "duration": 6.66
+  },
+  {
+    "text": "apart put them back together and look",
+    "start": 390.0,
+    "duration": 4.38
+  },
+  {
+    "text": "for clues",
+    "start": 393.57,
+    "duration": 4.04
+  },
+  {
+    "text": "of how this process might have developed",
+    "start": 394.38,
+    "duration": 5.909
+  },
+  {
+    "text": "and I'll tell you right now I think we",
+    "start": 397.61,
+    "duration": 3.34
+  },
+  {
+    "text": "can",
+    "start": 400.289,
+    "duration": 5.731
+  },
+  {
+    "text": "and I promise you that we will and is my",
+    "start": 400.95,
+    "duration": 7.23
+  },
+  {
+    "text": "present to you for being with me this",
+    "start": 406.02,
+    "duration": 5.07
+  },
+  {
+    "text": "morning I'll even make it an essay",
+    "start": 408.18,
+    "duration": 6.06
+  },
+  {
+    "text": "question on the examination pay",
+    "start": 411.09,
+    "duration": 5.25
+  },
+  {
+    "text": "attention to what I'm saying bring in",
+    "start": 414.24,
+    "duration": 5.07
+  },
+  {
+    "text": "interesting questions write it down",
+    "start": 416.34,
+    "duration": 6.12
+  },
+  {
+    "text": "really good take good notes and you're",
+    "start": 419.31,
+    "duration": 9.15
+  },
+  {
+    "text": "home free 4 G's 30% of your midterm exam",
+    "start": 422.46,
+    "duration": 11.03
+  },
+  {
+    "text": "I can't be much more blatant than that",
+    "start": 428.46,
+    "duration": 5.03
+  },
+  {
+    "text": "the transition from animism to",
+    "start": 434.0,
+    "duration": 6.72
+  },
+  {
+    "text": "anthropomorphic beliefs is gradual",
+    "start": 437.12,
+    "duration": 7.29
+  },
+  {
+    "text": "another thing I need to point out is",
+    "start": 440.72,
+    "duration": 7.06
+  },
+  {
+    "text": "even if we let's say we are all ancient",
+    "start": 444.41,
+    "duration": 6.7
+  },
+  {
+    "text": "Greeks we have all gotten to the",
+    "start": 447.78,
+    "duration": 7.02
+  },
+  {
+    "text": "anthropomorphic stage in thinking of our",
+    "start": 451.11,
+    "duration": 7.2
+  },
+  {
+    "text": "gods and goddesses we all believe that",
+    "start": 454.8,
+    "duration": 6.66
+  },
+  {
+    "text": "the completely anthropomorphic god Zeus",
+    "start": 458.31,
+    "duration": 7.53
+  },
+  {
+    "text": "is the ruler of the universe this",
+    "start": 461.46,
+    "duration": 9.18
+  },
+  {
+    "text": "doesn't mean that we fire that we cut",
+    "start": 465.84,
+    "duration": 7.2
+  },
+  {
+    "text": "loose that we let go of all of our other",
+    "start": 470.64,
+    "duration": 6.93
+  },
+  {
+    "text": "and animistic gods and goddesses we",
+    "start": 473.04,
+    "duration": 6.24
+  },
+  {
+    "text": "don't say that well now that we have",
+    "start": 477.57,
+    "duration": 6.66
+  },
+  {
+    "text": "Zeus and Zeus is going to be a frequent",
+    "start": 479.28,
+    "duration": 7.83
+  },
+  {
+    "text": "character in this class so I figure that",
+    "start": 484.23,
+    "duration": 5.1
+  },
+  {
+    "text": "I might draw him right now he started",
+    "start": 487.11,
+    "duration": 7.32
+  },
+  {
+    "text": "out as a thunder and lightning God but",
+    "start": 489.33,
+    "duration": 9.0
+  },
+  {
+    "text": "for whatever reason he became regarded",
+    "start": 494.43,
+    "duration": 5.82
+  },
+  {
+    "text": "as a chief of the gods again if you've",
+    "start": 498.33,
+    "duration": 3.3
+  },
+  {
+    "text": "ever been caught out in a really good",
+    "start": 500.25,
+    "duration": 4.05
+  },
+  {
+    "text": "thunderstorm you might understand why",
+    "start": 501.63,
+    "duration": 5.16
+  },
+  {
+    "text": "Zeus got to be the Supreme God he's",
+    "start": 504.3,
+    "duration": 4.08
+  },
+  {
+    "text": "always got a beard he's very",
+    "start": 506.79,
+    "duration": 5.79
+  },
+  {
+    "text": "good-looking and he usually has a very",
+    "start": 508.38,
+    "duration": 8.22
+  },
+  {
+    "text": "slightly receding hairline as we're",
+    "start": 512.58,
+    "duration": 7.26
+  },
+  {
+    "text": "going to find out he is anthropomorphic",
+    "start": 516.6,
+    "duration": 7.92
+  },
+  {
+    "text": "to a fault but just because we now",
+    "start": 519.84,
+    "duration": 8.43
+  },
+  {
+    "text": "worship the supreme god Zeus and think",
+    "start": 524.52,
+    "duration": 7.38
+  },
+  {
+    "text": "of him as an anthropomorphic God who is",
+    "start": 528.27,
+    "duration": 5.73
+  },
+  {
+    "text": "the chief of all the deities",
+    "start": 531.9,
+    "duration": 4.8
+  },
+  {
+    "text": "that does not mean that we have fired",
+    "start": 534.0,
+    "duration": 8.97
+  },
+  {
+    "text": "the sky God Uranus how do we put them",
+    "start": 536.7,
+    "duration": 8.76
+  },
+  {
+    "text": "together how do we make these two",
+    "start": 542.97,
+    "duration": 5.49
+  },
+  {
+    "text": "conceptions of supreme deity works side",
+    "start": 545.46,
+    "duration": 6.77
+  },
+  {
+    "text": "by side I'm not gonna tell you right now",
+    "start": 548.46,
+    "duration": 6.33
+  },
+  {
+    "text": "but what I will tell you what I will I",
+    "start": 552.23,
+    "duration": 5.29
+  },
+  {
+    "text": "ask you is when I start to explain this",
+    "start": 554.79,
+    "duration": 6.72
+  },
+  {
+    "text": "or try to explain it please put aside",
+    "start": 557.52,
+    "duration": 6.75
+  },
+  {
+    "text": "your twentieth-century scruples it's",
+    "start": 561.51,
+    "duration": 7.11
+  },
+  {
+    "text": "gonna be a very strange explanation but",
+    "start": 564.27,
+    "duration": 7.59
+  },
+  {
+    "text": "keep in mind one more time that the",
+    "start": 568.62,
+    "duration": 5.39
+  },
+  {
+    "text": "transition from animism to",
+    "start": 571.86,
+    "duration": 5.22
+  },
+  {
+    "text": "anthropomorphism is gradual and it",
+    "start": 574.01,
+    "duration": 6.61
+  },
+  {
+    "text": "doesn't mean firing the previous",
+    "start": 577.08,
+    "duration": 5.82
+  },
+  {
+    "text": "administration of gods and goddesses so",
+    "start": 580.62,
+    "duration": 7.8
+  },
+  {
+    "text": "to speak another point I'd like to make",
+    "start": 582.9,
+    "duration": 8.33
+  },
+  {
+    "text": "about animism as opposed to",
+    "start": 588.42,
+    "duration": 6.3
+  },
+  {
+    "text": "anthropomorphism is that in some",
+    "start": 591.23,
+    "duration": 8.47
+  },
+  {
+    "text": "respects anthropomorphism conceiving of",
+    "start": 594.72,
+    "duration": 9.29
+  },
+  {
+    "text": "gods and goddesses as basically human",
+    "start": 599.7,
+    "duration": 8.13
+  },
+  {
+    "text": "it's not necessarily in advance let me",
+    "start": 604.01,
+    "duration": 7.98
+  },
+  {
+    "text": "tell you why some of these",
+    "start": 607.83,
+    "duration": 8.33
+  },
+  {
+    "text": "anthropomorphic gods and goddesses",
+    "start": 611.99,
+    "duration": 8.89
+  },
+  {
+    "text": "become human to a fault they become",
+    "start": 616.16,
+    "duration": 8.5
+  },
+  {
+    "text": "almost characters in a long-running soap",
+    "start": 620.88,
+    "duration": 8.39
+  },
+  {
+    "text": "opera that we call classical mythology",
+    "start": 624.66,
+    "duration": 4.61
+  },
+  {
+    "text": "anthropomorphic gods and goddesses look",
+    "start": 631.1,
+    "duration": 7.45
+  },
+  {
+    "text": "like everyday man and women except for",
+    "start": 633.87,
+    "duration": 10.2
+  },
+  {
+    "text": "their bigger stronger smarter than we",
+    "start": 638.55,
+    "duration": 8.64
+  },
+  {
+    "text": "are more beautiful than we are and they",
+    "start": 644.07,
+    "duration": 7.95
+  },
+  {
+    "text": "are immortal they have human character",
+    "start": 647.19,
+    "duration": 8.91
+  },
+  {
+    "text": "traits which ours more strongly",
+    "start": 652.02,
+    "duration": 6.69
+  },
+  {
+    "text": "developed an average human character",
+    "start": 656.1,
+    "duration": 8.07
+  },
+  {
+    "text": "traits even their faults are greater",
+    "start": 658.71,
+    "duration": 8.4
+  },
+  {
+    "text": "than human faults when you get a god or",
+    "start": 664.17,
+    "duration": 3.15
+  },
+  {
+    "text": "a",
+    "start": 667.11,
+    "duration": 3.06
+  },
+  {
+    "text": "is angry at you they can be just as",
+    "start": 667.32,
+    "duration": 5.97
+  },
+  {
+    "text": "vengeful as any human being and even",
+    "start": 670.17,
+    "duration": 7.17
+  },
+  {
+    "text": "worse because we're talking about a god",
+    "start": 673.29,
+    "duration": 9.03
+  },
+  {
+    "text": "or a goddess let me pause for a question",
+    "start": 677.34,
+    "duration": 6.78
+  },
+  {
+    "text": "let me ask if you have any questions",
+    "start": 682.32,
+    "duration": 4.13
+  },
+  {
+    "text": "about the difference between",
+    "start": 684.12,
+    "duration": 4.68
+  },
+  {
+    "text": "anthropomorphic conception of gods and",
+    "start": 686.45,
+    "duration": 5.53
+  },
+  {
+    "text": "goddesses and animistic conception of",
+    "start": 688.8,
+    "duration": 6.48
+  },
+  {
+    "text": "god and goddesses I promise you this is",
+    "start": 691.98,
+    "duration": 9.15
+  },
+  {
+    "text": "going to be on the test okay your name",
+    "start": 695.28,
+    "duration": 17.31
+  },
+  {
+    "text": "is Phil correct the question is does",
+    "start": 701.13,
+    "duration": 15.24
+  },
+  {
+    "text": "animism apply to planets and animals and",
+    "start": 712.59,
+    "duration": 8.13
+  },
+  {
+    "text": "such like that is correct that anything",
+    "start": 716.37,
+    "duration": 6.21
+  },
+  {
+    "text": "that your culture Phil finds",
+    "start": 720.72,
+    "duration": 5.13
+  },
+  {
+    "text": "particularly worthy of note perhaps you",
+    "start": 722.58,
+    "duration": 6.39
+  },
+  {
+    "text": "are not all that keen on trees but you",
+    "start": 725.85,
+    "duration": 6.42
+  },
+  {
+    "text": "think planets are neat yeah you can",
+    "start": 728.97,
+    "duration": 5.19
+  },
+  {
+    "text": "print you can think of the planets of",
+    "start": 732.27,
+    "duration": 4.38
+  },
+  {
+    "text": "gods and goddesses one of the things",
+    "start": 734.16,
+    "duration": 3.99
+  },
+  {
+    "text": "we're going to find out about ancient",
+    "start": 736.65,
+    "duration": 3.15
+  },
+  {
+    "text": "Greek mythology thank you for the",
+    "start": 738.15,
+    "duration": 6.12
+  },
+  {
+    "text": "question is that they have small armies",
+    "start": 739.8,
+    "duration": 7.44
+  },
+  {
+    "text": "of tree gods and goddesses mostly",
+    "start": 744.27,
+    "duration": 7.47
+  },
+  {
+    "text": "goddesses and small armies of river and",
+    "start": 747.24,
+    "duration": 7.92
+  },
+  {
+    "text": "water gods and goddesses obviously at a",
+    "start": 751.74,
+    "duration": 5.61
+  },
+  {
+    "text": "very early stage in their cultural",
+    "start": 755.16,
+    "duration": 4.71
+  },
+  {
+    "text": "development the ancient Greeks were just",
+    "start": 757.35,
+    "duration": 5.91
+  },
+  {
+    "text": "obsessed with water and trees good",
+    "start": 759.87,
+    "duration": 7.64
+  },
+  {
+    "text": "question well answer to other questions",
+    "start": 763.26,
+    "duration": 4.25
+  },
+  {
+    "text": "no other questions my lecture is so",
+    "start": 767.69,
+    "duration": 4.18
+  },
+  {
+    "text": "brilliant that there are no possible",
+    "start": 770.16,
+    "duration": 7.74
+  },
+  {
+    "text": "questions then I'll talk more the",
+    "start": 771.87,
+    "duration": 9.72
+  },
+  {
+    "text": "ancient peoples in general not just",
+    "start": 777.9,
+    "duration": 7.17
+  },
+  {
+    "text": "ancient Greeks but ancient Aztecs",
+    "start": 781.59,
+    "duration": 7.26
+  },
+  {
+    "text": "sanctioned Babylonians ancient Norse try",
+    "start": 785.07,
+    "duration": 8.67
+  },
+  {
+    "text": "to explain their universe in terms they",
+    "start": 788.85,
+    "duration": 8.57
+  },
+  {
+    "text": "can understand in terms they think that",
+    "start": 793.74,
+    "duration": 7.6
+  },
+  {
+    "text": "they have a grasp on they're not off",
+    "start": 797.42,
+    "duration": 10.18
+  },
+  {
+    "text": "from what we are today for example we",
+    "start": 801.34,
+    "duration": 8.82
+  },
+  {
+    "text": "skeptical children of the 20th century",
+    "start": 807.6,
+    "duration": 7.06
+  },
+  {
+    "text": "try to explain the behavior of matter by",
+    "start": 810.16,
+    "duration": 8.69
+  },
+  {
+    "text": "describing it as itty-bitty little",
+    "start": 814.66,
+    "duration": 8.43
+  },
+  {
+    "text": "unbreakable particles sometimes bonding",
+    "start": 818.85,
+    "duration": 7.93
+  },
+  {
+    "text": "with each other and sometimes splitting",
+    "start": 823.09,
+    "duration": 5.73
+  },
+  {
+    "text": "apart from each other does anybody know",
+    "start": 826.78,
+    "duration": 3.57
+  },
+  {
+    "text": "what these itty-bitty little particles",
+    "start": 828.82,
+    "duration": 8.82
+  },
+  {
+    "text": "are called come on thank you atoms right",
+    "start": 830.35,
+    "duration": 11.43
+  },
+  {
+    "text": "and each atom has its each element has",
+    "start": 837.64,
+    "duration": 6.45
+  },
+  {
+    "text": "its own atom yeah really wonderful the",
+    "start": 841.78,
+    "duration": 4.17
+  },
+  {
+    "text": "ancient Greeks came up with that idea by",
+    "start": 844.09,
+    "duration": 4.77
+  },
+  {
+    "text": "the way fourth century BC that's nothing",
+    "start": 845.95,
+    "duration": 6.75
+  },
+  {
+    "text": "new but have we perfected has modern",
+    "start": 848.86,
+    "duration": 5.88
+  },
+  {
+    "text": "science perfected this conception of",
+    "start": 852.7,
+    "duration": 5.67
+  },
+  {
+    "text": "matter or do we have more work to do on",
+    "start": 854.74,
+    "duration": 6.11
+  },
+  {
+    "text": "this subject",
+    "start": 858.37,
+    "duration": 2.48
+  },
+  {
+    "text": "thank you Farrell in much more work we",
+    "start": 862.23,
+    "duration": 10.9
+  },
+  {
+    "text": "have what quartz and sub you know I'm",
+    "start": 865.21,
+    "duration": 9.21
+  },
+  {
+    "text": "not going to get into this i'm not",
+    "start": 873.13,
+    "duration": 4.2
+  },
+  {
+    "text": "horribly well versed in this but the",
+    "start": 874.42,
+    "duration": 6.99
+  },
+  {
+    "text": "atomic system is just a model for how we",
+    "start": 877.33,
+    "duration": 10.74
+  },
+  {
+    "text": "think matter behaves keeping this in",
+    "start": 881.41,
+    "duration": 8.82
+  },
+  {
+    "text": "mind or the big bang theory of the",
+    "start": 888.07,
+    "duration": 5.61
+  },
+  {
+    "text": "creation of the universe now ray and i",
+    "start": 890.23,
+    "duration": 4.92
+  },
+  {
+    "text": "were there at the creation of the",
+    "start": 893.68,
+    "duration": 3.39
+  },
+  {
+    "text": "universe but we're not telling anybody",
+    "start": 895.15,
+    "duration": 3.69
+  },
+  {
+    "text": "what it was really like we're going to",
+    "start": 897.07,
+    "duration": 5.34
+  },
+  {
+    "text": "make you generation extras guests but",
+    "start": 898.84,
+    "duration": 7.98
+  },
+  {
+    "text": "the Big Bang Theory is again an analogy",
+    "start": 902.41,
+    "duration": 8.1
+  },
+  {
+    "text": "a model of how some scientists believe",
+    "start": 906.82,
+    "duration": 5.16
+  },
+  {
+    "text": "that the universe could have been",
+    "start": 910.51,
+    "duration": 5.4
+  },
+  {
+    "text": "created let's not fault",
+    "start": 911.98,
+    "duration": 6.39
+  },
+  {
+    "text": "the ancient Greeks and the other ancient",
+    "start": 915.91,
+    "duration": 6.81
+  },
+  {
+    "text": "civilizations for using models to try to",
+    "start": 918.37,
+    "duration": 7.62
+  },
+  {
+    "text": "describe the forces in their lives it",
+    "start": 922.72,
+    "duration": 7.71
+  },
+  {
+    "text": "does become kind of silly to say that",
+    "start": 925.99,
+    "duration": 6.57
+  },
+  {
+    "text": "all of the forces of nature in the",
+    "start": 930.43,
+    "duration": 4.26
+  },
+  {
+    "text": "universe are gods and",
+    "start": 932.56,
+    "duration": 5.4
+  },
+  {
+    "text": "goddesses who control them but the",
+    "start": 934.69,
+    "duration": 4.74
+  },
+  {
+    "text": "ancient Greeks are doing the best they",
+    "start": 937.96,
+    "duration": 2.72
+  },
+  {
+    "text": "can",
+    "start": 939.43,
+    "duration": 4.35
+  },
+  {
+    "text": "they lived in cities who were ruled by",
+    "start": 940.68,
+    "duration": 5.91
+  },
+  {
+    "text": "which were ruled by kings and queens",
+    "start": 943.78,
+    "duration": 5.82
+  },
+  {
+    "text": "doesn't it make sense that the universe",
+    "start": 946.59,
+    "duration": 7.21
+  },
+  {
+    "text": "is ruled by a king they live in families",
+    "start": 949.6,
+    "duration": 6.23
+  },
+  {
+    "text": "which is which are ruled by a dad",
+    "start": 953.8,
+    "duration": 5.36
+  },
+  {
+    "text": "because they are a patriarchal society",
+    "start": 955.83,
+    "duration": 6.01
+  },
+  {
+    "text": "doesn't it make sense when you consider",
+    "start": 959.16,
+    "duration": 5.14
+  },
+  {
+    "text": "this that the universe is ruled by a",
+    "start": 961.84,
+    "duration": 7.08
+  },
+  {
+    "text": "king and not by a queen and wait until",
+    "start": 964.3,
+    "duration": 6.2
+  },
+  {
+    "text": "you hear about this",
+    "start": 968.92,
+    "duration": 4.8
+  },
+  {
+    "text": "the ancient Greeks theory of the",
+    "start": 970.5,
+    "duration": 7.81
+  },
+  {
+    "text": "creation of the universe imagine",
+    "start": 973.72,
+    "duration": 8.79
+  },
+  {
+    "text": "yourselves at the beginning of time okay",
+    "start": 978.31,
+    "duration": 5.25
+  },
+  {
+    "text": "are we all there at the beginning of",
+    "start": 982.51,
+    "duration": 1.56
+  },
+  {
+    "text": "time",
+    "start": 983.56,
+    "duration": 5.49
+  },
+  {
+    "text": "it's about Oh 3,500 BC a number I just",
+    "start": 984.07,
+    "duration": 7.28
+  },
+  {
+    "text": "made up",
+    "start": 989.05,
+    "duration": 5.58
+  },
+  {
+    "text": "we don't know an awful lot about the",
+    "start": 991.35,
+    "duration": 5.5
+  },
+  {
+    "text": "universe around us we are all completely",
+    "start": 994.63,
+    "duration": 7.92
+  },
+  {
+    "text": "animistic bad ball of fire up in the sky",
+    "start": 996.85,
+    "duration": 12.27
+  },
+  {
+    "text": "the Sun is a God what would be a good",
+    "start": 1002.55,
+    "duration": 9.03
+  },
+  {
+    "text": "name for this God at the dawn of time",
+    "start": 1009.12,
+    "duration": 7.52
+  },
+  {
+    "text": "anybody want to guess I vote for the Sun",
+    "start": 1011.58,
+    "duration": 10.02
+  },
+  {
+    "text": "and that big advance of blue stuff over",
+    "start": 1016.64,
+    "duration": 8.23
+  },
+  {
+    "text": "our head we call it a sky right right",
+    "start": 1021.6,
+    "duration": 6.12
+  },
+  {
+    "text": "your name is it's that's right isn't it",
+    "start": 1024.87,
+    "duration": 6.75
+  },
+  {
+    "text": "okay it's a god what will we call it",
+    "start": 1027.72,
+    "duration": 7.05
+  },
+  {
+    "text": "Kari you all right you are already",
+    "start": 1031.62,
+    "duration": 5.91
+  },
+  {
+    "text": "learning to think like an ancient person",
+    "start": 1034.77,
+    "duration": 5.34
+  },
+  {
+    "text": "at the dawn of time how about this",
+    "start": 1037.53,
+    "duration": 7.26
+  },
+  {
+    "text": "expanse of brown stuff beneath our feet",
+    "start": 1040.11,
+    "duration": 7.17
+  },
+  {
+    "text": "that we walk on and sometimes gives us",
+    "start": 1044.79,
+    "duration": 3.72
+  },
+  {
+    "text": "good things to eat",
+    "start": 1047.28,
+    "duration": 4.83
+  },
+  {
+    "text": "you're still crystal right what would we",
+    "start": 1048.51,
+    "duration": 9.06
+  },
+  {
+    "text": "call this goddess dirt or if we wanted",
+    "start": 1052.11,
+    "duration": 8.79
+  },
+  {
+    "text": "to be more respectful we would call her",
+    "start": 1057.57,
+    "duration": 7.7
+  },
+  {
+    "text": "earth I'm just having some fun",
+    "start": 1060.9,
+    "duration": 4.37
+  },
+  {
+    "text": "you get the basic principle these are",
+    "start": 1065.73,
+    "duration": 8.16
+  },
+  {
+    "text": "all animistic deities but how did they",
+    "start": 1069.179,
+    "duration": 10.861
+  },
+  {
+    "text": "get here growing up as most if not all",
+    "start": 1073.89,
+    "duration": 9.09
+  },
+  {
+    "text": "of us did in the judeo-christian",
+    "start": 1080.04,
+    "duration": 6.389
+  },
+  {
+    "text": "tradition we are familiar with the",
+    "start": 1082.98,
+    "duration": 7.439
+  },
+  {
+    "text": "concept of a Supreme Being who brings",
+    "start": 1086.429,
+    "duration": 6.721
+  },
+  {
+    "text": "the universe and everything in the",
+    "start": 1090.419,
+    "duration": 6.331
+  },
+  {
+    "text": "universe into existence by speaking its",
+    "start": 1093.15,
+    "duration": 7.47
+  },
+  {
+    "text": "name or otherwise willing it to be there",
+    "start": 1096.75,
+    "duration": 7.049
+  },
+  {
+    "text": "and God said let there be water and",
+    "start": 1100.62,
+    "duration": 10.799
+  },
+  {
+    "text": "there was water so on so for it that's a",
+    "start": 1103.799,
+    "duration": 10.171
+  },
+  {
+    "text": "very tidy and clean way of creating the",
+    "start": 1111.419,
+    "duration": 7.531
+  },
+  {
+    "text": "universe no cd little details nothing",
+    "start": 1113.97,
+    "duration": 7.17
+  },
+  {
+    "text": "that really strains I don't think your",
+    "start": 1118.95,
+    "duration": 6.39
+  },
+  {
+    "text": "imagination too much obviously all these",
+    "start": 1121.14,
+    "duration": 8.49
+  },
+  {
+    "text": "wonderful things about us the forces of",
+    "start": 1125.34,
+    "duration": 6.69
+  },
+  {
+    "text": "nature and inanimate objects had to get",
+    "start": 1129.63,
+    "duration": 6.48
+  },
+  {
+    "text": "here somehow it doesn't boggle the mind",
+    "start": 1132.03,
+    "duration": 6.57
+  },
+  {
+    "text": "too much for most of us that somebody",
+    "start": 1136.11,
+    "duration": 5.1
+  },
+  {
+    "text": "put them there and that this somebody",
+    "start": 1138.6,
+    "duration": 4.92
+  },
+  {
+    "text": "must have been a lot more powerful than",
+    "start": 1141.21,
+    "duration": 6.26
+  },
+  {
+    "text": "us but this is the traditional",
+    "start": 1143.52,
+    "duration": 5.97
+  },
+  {
+    "text": "judeo-christian way of looking at the",
+    "start": 1147.47,
+    "duration": 6.579
+  },
+  {
+    "text": "creation of the universe but back at the",
+    "start": 1149.49,
+    "duration": 9.679
+  },
+  {
+    "text": "dawn of time which is where we are still",
+    "start": 1154.049,
+    "duration": 5.12
+  },
+  {
+    "text": "we're not really that familiar with",
+    "start": 1159.5,
+    "duration": 5.38
+  },
+  {
+    "text": "creating things just by willing them",
+    "start": 1162.84,
+    "duration": 6.24
+  },
+  {
+    "text": "into existence however we do know one",
+    "start": 1164.88,
+    "duration": 11.46
+  },
+  {
+    "text": "way of creating something would anybody",
+    "start": 1169.08,
+    "duration": 9.66
+  },
+  {
+    "text": "like to guess what that is your name is",
+    "start": 1176.34,
+    "duration": 5.39
+  },
+  {
+    "text": "Scott",
+    "start": 1178.74,
+    "duration": 2.99
+  },
+  {
+    "text": "okay but remember I very thoughtfully",
+    "start": 1182.72,
+    "duration": 4.78
+  },
+  {
+    "text": "put us so far back at the beginning of",
+    "start": 1185.73,
+    "duration": 3.66
+  },
+  {
+    "text": "time that we don't know how to build",
+    "start": 1187.5,
+    "duration": 3.63
+  },
+  {
+    "text": "anything we're still living in caves and",
+    "start": 1189.39,
+    "duration": 10.23
+  },
+  {
+    "text": "trees and stuff sex that's right sex the",
+    "start": 1191.13,
+    "duration": 12.299
+  },
+  {
+    "text": "universe came into existence according",
+    "start": 1199.62,
+    "duration": 5.16
+  },
+  {
+    "text": "to the ancient Greeks",
+    "start": 1203.429,
+    "duration": 5.731
+  },
+  {
+    "text": "through sex the universe was not created",
+    "start": 1204.78,
+    "duration": 10.88
+  },
+  {
+    "text": "in the ancient Greeks mind it was born",
+    "start": 1209.16,
+    "duration": 10.95
+  },
+  {
+    "text": "okay a couple more buzz words I'd like",
+    "start": 1215.66,
+    "duration": 7.81
+  },
+  {
+    "text": "to give you as long as we're at it if",
+    "start": 1220.11,
+    "duration": 9.08
+  },
+  {
+    "text": "you are one of those people whoops",
+    "start": 1223.47,
+    "duration": 5.72
+  },
+  {
+    "text": "who believes that the universe was",
+    "start": 1231.2,
+    "duration": 6.69
+  },
+  {
+    "text": "created okay",
+    "start": 1234.54,
+    "duration": 6.48
+  },
+  {
+    "text": "created with the purpose created by a",
+    "start": 1237.89,
+    "duration": 6.46
+  },
+  {
+    "text": "god or a goddess or a deity who knew",
+    "start": 1241.02,
+    "duration": 6.0
+  },
+  {
+    "text": "what he or she was doing and had a",
+    "start": 1244.35,
+    "duration": 8.63
+  },
+  {
+    "text": "specific purpose that is cosmology",
+    "start": 1247.02,
+    "duration": 5.96
+  },
+  {
+    "text": "notice our old friend the suffix L o gy",
+    "start": 1253.13,
+    "duration": 9.7
+  },
+  {
+    "text": "it means that there is a rational",
+    "start": 1259.13,
+    "duration": 6.669
+  },
+  {
+    "text": "purpose there is rational thought behind",
+    "start": 1262.83,
+    "duration": 7.469
+  },
+  {
+    "text": "the creation of the cosmos what the",
+    "start": 1265.799,
+    "duration": 9.321
+  },
+  {
+    "text": "ancient Greeks had by contrast",
+    "start": 1270.299,
+    "duration": 4.821
+  },
+  {
+    "text": "is a Theogony which is a term for birth",
+    "start": 1277.77,
+    "duration": 12.33
+  },
+  {
+    "text": "of the gods the ancient Greeks believed",
+    "start": 1284.73,
+    "duration": 8.34
+  },
+  {
+    "text": "that the gods and goddesses who made up",
+    "start": 1290.1,
+    "duration": 6.39
+  },
+  {
+    "text": "the physical universe were born and not",
+    "start": 1293.07,
+    "duration": 7.23
+  },
+  {
+    "text": "created I'll pause with that thought for",
+    "start": 1296.49,
+    "duration": 6.12
+  },
+  {
+    "text": "a second take a slug of coffee and ask",
+    "start": 1300.3,
+    "duration": 3.6
+  },
+  {
+    "text": "you if you have some questions up to",
+    "start": 1302.61,
+    "duration": 15.06
+  },
+  {
+    "text": "this point great ok the base yeah we get",
+    "start": 1303.9,
+    "duration": 17.25
+  },
+  {
+    "text": "a number of very very interesting words",
+    "start": 1317.67,
+    "duration": 8.7
+  },
+  {
+    "text": "from the base gon we get generation we",
+    "start": 1321.15,
+    "duration": 9.54
+  },
+  {
+    "text": "get gonad we get Genesis and the like it",
+    "start": 1326.37,
+    "duration": 8.31
+  },
+  {
+    "text": "means creation but more precisely to the",
+    "start": 1330.69,
+    "duration": 6.36
+  },
+  {
+    "text": "ancient Greeks that means birth it means",
+    "start": 1334.68,
+    "duration": 3.69
+  },
+  {
+    "text": "birth thank you Ray",
+    "start": 1337.05,
+    "duration": 9.51
+  },
+  {
+    "text": "your name is okay oh I knew somebody was",
+    "start": 1338.37,
+    "duration": 11.01
+  },
+  {
+    "text": "going to bust me with that one how did",
+    "start": 1346.56,
+    "duration": 6.93
+  },
+  {
+    "text": "they figure out what was the first",
+    "start": 1349.38,
+    "duration": 8.15
+  },
+  {
+    "text": "substance what did everything come from",
+    "start": 1353.49,
+    "duration": 6.9
+  },
+  {
+    "text": "even Aristotle who is another example of",
+    "start": 1357.53,
+    "duration": 4.36
+  },
+  {
+    "text": "a very intelligent ancient Greek",
+    "start": 1360.39,
+    "duration": 3.45
+  },
+  {
+    "text": "couldn't come up with that one they",
+    "start": 1361.89,
+    "duration": 5.48
+  },
+  {
+    "text": "uncaused cause the prime mover",
+    "start": 1363.84,
+    "duration": 7.23
+  },
+  {
+    "text": "I'm not going to expound on this too",
+    "start": 1367.37,
+    "duration": 5.74
+  },
+  {
+    "text": "much today it's a good question by the",
+    "start": 1371.07,
+    "duration": 3.48
+  },
+  {
+    "text": "way thank and I thank you from the",
+    "start": 1373.11,
+    "duration": 3.99
+  },
+  {
+    "text": "bottom of my heart but I'm not going to",
+    "start": 1374.55,
+    "duration": 5.19
+  },
+  {
+    "text": "expound on that too much today because",
+    "start": 1377.1,
+    "duration": 11.76
+  },
+  {
+    "text": "it belongs more to unit 2 but it's",
+    "start": 1379.74,
+    "duration": 11.07
+  },
+  {
+    "text": "always a sticky question in mythology",
+    "start": 1388.86,
+    "duration": 4.7
+  },
+  {
+    "text": "the Greeks explained it by saying chaos",
+    "start": 1390.81,
+    "duration": 8.75
+  },
+  {
+    "text": "the universe was created born from chaos",
+    "start": 1393.56,
+    "duration": 6.0
+  },
+  {
+    "text": "now for those of you who have visited me",
+    "start": 1399.62,
+    "duration": 4.81
+  },
+  {
+    "text": "in my office and there are some of you",
+    "start": 1402.69,
+    "duration": 4.83
+  },
+  {
+    "text": "here you know that chaos is a good",
+    "start": 1404.43,
+    "duration": 7.74
+  },
+  {
+    "text": "to describe the mess that I keep in my",
+    "start": 1407.52,
+    "duration": 7.83
+  },
+  {
+    "text": "office chaos is a good name for the",
+    "start": 1412.17,
+    "duration": 6.06
+  },
+  {
+    "text": "first day of classes chaos is a good",
+    "start": 1415.35,
+    "duration": 5.37
+  },
+  {
+    "text": "name for your wedding day but to the",
+    "start": 1418.23,
+    "duration": 7.83
+  },
+  {
+    "text": "ancient Greeks chaos just means a giant",
+    "start": 1420.72,
+    "duration": 11.13
+  },
+  {
+    "text": "void Jeremy a cosmic emptiness a cosmic",
+    "start": 1426.06,
+    "duration": 10.05
+  },
+  {
+    "text": "womb okay from which I was hoping",
+    "start": 1431.85,
+    "duration": 5.97
+  },
+  {
+    "text": "somebody would ask me this question I",
+    "start": 1436.11,
+    "duration": 3.51
+  },
+  {
+    "text": "very thoughtfully put it up on the board",
+    "start": 1437.82,
+    "duration": 4.17
+  },
+  {
+    "text": "because I thought I had one person in",
+    "start": 1439.62,
+    "duration": 4.26
+  },
+  {
+    "text": "this room who would be intelligent",
+    "start": 1441.99,
+    "duration": 3.18
+  },
+  {
+    "text": "enough to ask me that question and I'm",
+    "start": 1443.88,
+    "duration": 6.18
+  },
+  {
+    "text": "glad you did but chaos is the cosmic",
+    "start": 1445.17,
+    "duration": 8.73
+  },
+  {
+    "text": "womb the cosmic emptiness from which the",
+    "start": 1450.06,
+    "duration": 7.35
+  },
+  {
+    "text": "first generation of deities comes and",
+    "start": 1453.9,
+    "duration": 6.09
+  },
+  {
+    "text": "I'm quite sure that Jeremy after you've",
+    "start": 1457.41,
+    "duration": 4.38
+  },
+  {
+    "text": "thought about this one for a couple of",
+    "start": 1459.99,
+    "duration": 4.38
+  },
+  {
+    "text": "minutes you'll have more questions like",
+    "start": 1461.79,
+    "duration": 6.75
+  },
+  {
+    "text": "who spouted chaos and what is chaos but",
+    "start": 1464.37,
+    "duration": 7.14
+  },
+  {
+    "text": "I'm not gonna answer them you just sit",
+    "start": 1468.54,
+    "duration": 4.98
+  },
+  {
+    "text": "on them and ask me them on Monday okay",
+    "start": 1471.51,
+    "duration": 5.16
+  },
+  {
+    "text": "because it's not a train of thought I",
+    "start": 1473.52,
+    "duration": 6.24
+  },
+  {
+    "text": "care to pursue right this second other",
+    "start": 1476.67,
+    "duration": 6.9
+  },
+  {
+    "text": "questions that I could perhaps answer or",
+    "start": 1479.76,
+    "duration": 11.76
+  },
+  {
+    "text": "make up an answer for okay what I want",
+    "start": 1483.57,
+    "duration": 11.25
+  },
+  {
+    "text": "to do right now is go back and talk",
+    "start": 1491.52,
+    "duration": 7.91
+  },
+  {
+    "text": "about the anthropomorphic deities again",
+    "start": 1494.82,
+    "duration": 7.83
+  },
+  {
+    "text": "I've suggested that in many respects the",
+    "start": 1499.43,
+    "duration": 7.24
+  },
+  {
+    "text": "anthropomorphic deities who look and",
+    "start": 1502.65,
+    "duration": 5.43
+  },
+  {
+    "text": "behave like gods",
+    "start": 1506.67,
+    "duration": 4.91
+  },
+  {
+    "text": "like like men and women only more so",
+    "start": 1508.08,
+    "duration": 9.5
+  },
+  {
+    "text": "have their uses one can relate to these",
+    "start": 1511.58,
+    "duration": 10.06
+  },
+  {
+    "text": "anthropomorphic gods more easily and if",
+    "start": 1517.58,
+    "duration": 9.3
+  },
+  {
+    "text": "you use that phrase on an exam relate to",
+    "start": 1521.64,
+    "duration": 5.24
+  },
+  {
+    "text": "please be more specific I'm talking",
+    "start": 1527.36,
+    "duration": 6.9
+  },
+  {
+    "text": "about humans can relate to",
+    "start": 1531.78,
+    "duration": 6.42
+  },
+  {
+    "text": "anthropomorphic gods in the sense that",
+    "start": 1534.26,
+    "duration": 7.21
+  },
+  {
+    "text": "they can understand the anthropomorphic",
+    "start": 1538.2,
+    "duration": 5.55
+  },
+  {
+    "text": "gods and goddesses thought-process these",
+    "start": 1541.47,
+    "duration": 5.48
+  },
+  {
+    "text": "or think they can they can persuade",
+    "start": 1543.75,
+    "duration": 9.179
+  },
+  {
+    "text": "cajole bribe Hornswoggle anthropomorphic",
+    "start": 1546.95,
+    "duration": 10.05
+  },
+  {
+    "text": "gods and goddesses into doing things",
+    "start": 1552.929,
+    "duration": 7.681
+  },
+  {
+    "text": "that they can't obviously do with an",
+    "start": 1557.0,
+    "duration": 10.299
+  },
+  {
+    "text": "animistic deity but these animistic gods",
+    "start": 1560.61,
+    "duration": 8.699
+  },
+  {
+    "text": "and goddesses and sorry anthropomorphic",
+    "start": 1567.299,
+    "duration": 3.271
+  },
+  {
+    "text": "gods and goddesses have their",
+    "start": 1569.309,
+    "duration": 5.691
+  },
+  {
+    "text": "shortcomings in short they become too",
+    "start": 1570.57,
+    "duration": 12.15
+  },
+  {
+    "text": "human to human to the ancient Greeks",
+    "start": 1575.0,
+    "duration": 9.75
+  },
+  {
+    "text": "pretty much through all of their",
+    "start": 1582.72,
+    "duration": 7.41
+  },
+  {
+    "text": "civilization the gods Zeus Thunder God",
+    "start": 1584.75,
+    "duration": 10.12
+  },
+  {
+    "text": "wife of Hera was the chief of the gods",
+    "start": 1590.13,
+    "duration": 8.75
+  },
+  {
+    "text": "and goddesses who lived on Mount Olympus",
+    "start": 1594.87,
+    "duration": 4.01
+  },
+  {
+    "text": "since he was the chief god and king of",
+    "start": 1598.909,
+    "duration": 3.9
+  },
+  {
+    "text": "the gods",
+    "start": 1601.919,
+    "duration": 4.441
+  },
+  {
+    "text": "the ancient Greeks has associated him",
+    "start": 1602.809,
+    "duration": 7.181
+  },
+  {
+    "text": "with justice and goodness and fair",
+    "start": 1606.36,
+    "duration": 7.939
+  },
+  {
+    "text": "dealing and what is right",
+    "start": 1609.99,
+    "duration": 7.85
+  },
+  {
+    "text": "oddly enough the ancient Greeks also",
+    "start": 1614.299,
+    "duration": 5.951
+  },
+  {
+    "text": "associated with him with being the",
+    "start": 1617.84,
+    "duration": 6.4
+  },
+  {
+    "text": "father about five million gods and other",
+    "start": 1620.25,
+    "duration": 7.86
+  },
+  {
+    "text": "goddesses this does not say much about",
+    "start": 1624.24,
+    "duration": 9.71
+  },
+  {
+    "text": "Zeus's approach to a monogamous marriage",
+    "start": 1628.11,
+    "duration": 5.84
+  },
+  {
+    "text": "but we're not going to talk about Zeus",
+    "start": 1635.15,
+    "duration": 4.509
+  },
+  {
+    "text": "just yet because Zeus belongs next week",
+    "start": 1637.409,
+    "duration": 6.0
+  },
+  {
+    "text": "what I want to talk to you about is the",
+    "start": 1639.659,
+    "duration": 9.39
+  },
+  {
+    "text": "various ancient Greek Sun gods and again",
+    "start": 1643.409,
+    "duration": 9.061
+  },
+  {
+    "text": "I'm offering you this example so that",
+    "start": 1649.049,
+    "duration": 6.961
+  },
+  {
+    "text": "you can trace the development of ancient",
+    "start": 1652.47,
+    "duration": 6.079
+  },
+  {
+    "text": "Greek religious thought from animism to",
+    "start": 1656.01,
+    "duration": 7.76
+  },
+  {
+    "text": "anthropomorphism let's start out with",
+    "start": 1658.549,
+    "duration": 9.971
+  },
+  {
+    "text": "let's erase sex you don't need to be",
+    "start": 1663.77,
+    "duration": 8.379
+  },
+  {
+    "text": "thinking about that now anyway we have a",
+    "start": 1668.52,
+    "duration": 6.48
+  },
+  {
+    "text": "big ball of fire",
+    "start": 1672.149,
+    "duration": 6.571
+  },
+  {
+    "text": "in the sky we have already noticed at",
+    "start": 1675.0,
+    "duration": 6.36
+  },
+  {
+    "text": "the beginning of time that it always",
+    "start": 1678.72,
+    "duration": 7.17
+  },
+  {
+    "text": "moves from east to west we notice these",
+    "start": 1681.36,
+    "duration": 7.29
+  },
+  {
+    "text": "things sometimes it comes out and it's",
+    "start": 1685.89,
+    "duration": 5.76
+  },
+  {
+    "text": "nice and warm sometimes it comes out and",
+    "start": 1688.65,
+    "duration": 3.99
+  },
+  {
+    "text": "it's cold",
+    "start": 1691.65,
+    "duration": 5.22
+  },
+  {
+    "text": "sometimes it come out at all so on so",
+    "start": 1692.64,
+    "duration": 8.49
+  },
+  {
+    "text": "forth since we are at a very primitive",
+    "start": 1696.87,
+    "duration": 7.94
+  },
+  {
+    "text": "stage of our religious development I",
+    "start": 1701.13,
+    "duration": 6.99
+  },
+  {
+    "text": "propose that we call this big ball of",
+    "start": 1704.81,
+    "duration": 19.83
+  },
+  {
+    "text": "fire the thingy that goes through the",
+    "start": 1708.12,
+    "duration": 21.48
+  },
+  {
+    "text": "sky how's that for a name",
+    "start": 1724.64,
+    "duration": 7.95
+  },
+  {
+    "text": "the thingy that goes through the sky",
+    "start": 1729.6,
+    "duration": 6.15
+  },
+  {
+    "text": "we're not even advanced enough to have a",
+    "start": 1732.59,
+    "duration": 6.91
+  },
+  {
+    "text": "word for sun yet so let's call it that",
+    "start": 1735.75,
+    "duration": 7.53
+  },
+  {
+    "text": "thingy that goes through the sky or in",
+    "start": 1739.5,
+    "duration": 14.96
+  },
+  {
+    "text": "ancient Greek Hyperion Hyperion Hyperion",
+    "start": 1743.28,
+    "duration": 14.31
+  },
+  {
+    "text": "hyper means over and above an ancient",
+    "start": 1754.46,
+    "duration": 6.16
+  },
+  {
+    "text": "Greek if you are hyperactive well you",
+    "start": 1757.59,
+    "duration": 6.9
+  },
+  {
+    "text": "know what that means so does my mom an",
+    "start": 1760.62,
+    "duration": 7.41
+  },
+  {
+    "text": "ion just means going a thing that goes",
+    "start": 1764.49,
+    "duration": 8.43
+  },
+  {
+    "text": "up on high that was the original ancient",
+    "start": 1768.03,
+    "duration": 10.83
+  },
+  {
+    "text": "Greek name for the Sun as such this",
+    "start": 1772.92,
+    "duration": 7.92
+  },
+  {
+    "text": "thing that goes through the sky this",
+    "start": 1778.86,
+    "duration": 5.01
+  },
+  {
+    "text": "high peri on the thingy that goes",
+    "start": 1780.84,
+    "duration": 8.07
+  },
+  {
+    "text": "through the sky has no personality it's",
+    "start": 1783.87,
+    "duration": 12.42
+  },
+  {
+    "text": "just a big ball of fire however the Sun",
+    "start": 1788.91,
+    "duration": 10.47
+  },
+  {
+    "text": "is important it warms us it caught helps",
+    "start": 1796.29,
+    "duration": 7.11
+  },
+  {
+    "text": "crops to grow ok gives us our good",
+    "start": 1799.38,
+    "duration": 7.04
+  },
+  {
+    "text": "looking Sun tans",
+    "start": 1803.4,
+    "duration": 3.02
+  },
+  {
+    "text": "it's a force we'd like to understand",
+    "start": 1806.76,
+    "duration": 4.89
+  },
+  {
+    "text": "more about it's a force that we would",
+    "start": 1809.13,
+    "duration": 5.39
+  },
+  {
+    "text": "like to be able to control if we will",
+    "start": 1811.65,
+    "duration": 5.04
+  },
+  {
+    "text": "okay if you happen to be getting married",
+    "start": 1814.52,
+    "duration": 6.1
+  },
+  {
+    "text": "outside you would like the Sun God to",
+    "start": 1816.69,
+    "duration": 6.03
+  },
+  {
+    "text": "show up at your wedding as opposed to",
+    "start": 1820.62,
+    "duration": 5.04
+  },
+  {
+    "text": "the Thunder God if you catch my drift",
+    "start": 1822.72,
+    "duration": 5.579
+  },
+  {
+    "text": "but if these are just animistic gods and",
+    "start": 1825.66,
+    "duration": 5.759
+  },
+  {
+    "text": "goddesses they do whatever they do and",
+    "start": 1828.299,
+    "duration": 5.161
+  },
+  {
+    "text": "you've got no control over them",
+    "start": 1831.419,
+    "duration": 4.521
+  },
+  {
+    "text": "whatsoever",
+    "start": 1833.46,
+    "duration": 5.79
+  },
+  {
+    "text": "later on the ancient Greeks came up with",
+    "start": 1835.94,
+    "duration": 9.69
+  },
+  {
+    "text": "a word for son all its own Helios the",
+    "start": 1839.25,
+    "duration": 9.75
+  },
+  {
+    "text": "word survives to this day if you have a",
+    "start": 1845.63,
+    "duration": 6.039
+  },
+  {
+    "text": "tree in your yard that is heliotrope 'ok",
+    "start": 1849.0,
+    "duration": 5.13
+  },
+  {
+    "text": "it means that that tree will turn",
+    "start": 1851.669,
+    "duration": 5.401
+  },
+  {
+    "text": "towards the sun even if it has to bend",
+    "start": 1854.13,
+    "duration": 6.38
+  },
+  {
+    "text": "itself at a 90-degree angle to get there",
+    "start": 1857.07,
+    "duration": 8.06
+  },
+  {
+    "text": "that could be quite ugly but helios is",
+    "start": 1860.51,
+    "duration": 9.94
+  },
+  {
+    "text": "an ancient greek word for son big ball",
+    "start": 1865.13,
+    "duration": 10.96
+  },
+  {
+    "text": "of fire in the sky and pretty soon the",
+    "start": 1870.45,
+    "duration": 9.21
+  },
+  {
+    "text": "name helios becomes associated with an",
+    "start": 1876.09,
+    "duration": 10.55
+  },
+  {
+    "text": "ancient greek god not a big ball of fire",
+    "start": 1879.66,
+    "duration": 9.3
+  },
+  {
+    "text": "but to the ancient greeks",
+    "start": 1886.64,
+    "duration": 9.43
+  },
+  {
+    "text": "helios was a human being a man a god who",
+    "start": 1888.96,
+    "duration": 13.8
+  },
+  {
+    "text": "looked like a man i should say okay",
+    "start": 1896.07,
+    "duration": 12.93
+  },
+  {
+    "text": "here's a generic ancient greek guy who",
+    "start": 1902.76,
+    "duration": 13.409
+  },
+  {
+    "text": "drives a chariot containing the Sun does",
+    "start": 1909.0,
+    "duration": 11.929
+  },
+  {
+    "text": "that make sense kind of perryland",
+    "start": 1916.169,
+    "duration": 4.76
+  },
+  {
+    "text": "there was probably feral and asks was if",
+    "start": 1927.27,
+    "duration": 6.22
+  },
+  {
+    "text": "I'm not missing your question was there",
+    "start": 1931.03,
+    "duration": 5.64
+  },
+  {
+    "text": "ever a stage at which Helios might have",
+    "start": 1933.49,
+    "duration": 8.7
+  },
+  {
+    "text": "been an animistic God and then he just",
+    "start": 1936.67,
+    "duration": 8.55
+  },
+  {
+    "text": "kind of evolved into an anthropomorphic",
+    "start": 1942.19,
+    "duration": 6.72
+  },
+  {
+    "text": "God I would say yes now it's just a",
+    "start": 1945.22,
+    "duration": 5.73
+  },
+  {
+    "text": "guest we don't have any written record",
+    "start": 1948.91,
+    "duration": 6.54
+  },
+  {
+    "text": "of that but I would say probably whoa",
+    "start": 1950.95,
+    "duration": 6.9
+  },
+  {
+    "text": "that was a good answer sometimes he gets",
+    "start": 1955.45,
+    "duration": 6.33
+  },
+  {
+    "text": "to wear a really bright looking shiny",
+    "start": 1957.85,
+    "duration": 10.17
+  },
+  {
+    "text": "crown okay now that we have made this",
+    "start": 1961.78,
+    "duration": 8.07
+  },
+  {
+    "text": "great mythological advance what is your",
+    "start": 1968.02,
+    "duration": 4.79
+  },
+  {
+    "text": "name you are messing with your hair",
+    "start": 1969.85,
+    "duration": 5.58
+  },
+  {
+    "text": "Heather now that we have made this",
+    "start": 1972.81,
+    "duration": 4.36
+  },
+  {
+    "text": "mythological advance we have now",
+    "start": 1975.43,
+    "duration": 4.08
+  },
+  {
+    "text": "ascertained that this Sun God is",
+    "start": 1977.17,
+    "duration": 4.62
+  },
+  {
+    "text": "actually a guy named Helios who drives",
+    "start": 1979.51,
+    "duration": 5.64
+  },
+  {
+    "text": "around in a chariot what do we do with",
+    "start": 1981.79,
+    "duration": 11.1
+  },
+  {
+    "text": "Hyperion can we fire him Mona can we",
+    "start": 1985.15,
+    "duration": 11.52
+  },
+  {
+    "text": "fire him no we cannot fire him we can't",
+    "start": 1992.89,
+    "duration": 5.88
+  },
+  {
+    "text": "say he's you know we don't we've",
+    "start": 1996.67,
+    "duration": 3.69
+  },
+  {
+    "text": "abolished this god we don't believe in",
+    "start": 1998.77,
+    "duration": 5.75
+  },
+  {
+    "text": "him anymore what most mythological",
+    "start": 2000.36,
+    "duration": 6.87
+  },
+  {
+    "text": "traditions tend to do is what the Greeks",
+    "start": 2004.52,
+    "duration": 5.17
+  },
+  {
+    "text": "do here they say oh yes Helios",
+    "start": 2007.23,
+    "duration": 8.79
+  },
+  {
+    "text": "Hyperion's son okay I know what you're",
+    "start": 2009.69,
+    "duration": 10.56
+  },
+  {
+    "text": "thinking how does a big ball of gas get",
+    "start": 2016.02,
+    "duration": 7.92
+  },
+  {
+    "text": "married god only knows who he got",
+    "start": 2020.25,
+    "duration": 6.84
+  },
+  {
+    "text": "married to and whatever it is he gets",
+    "start": 2023.94,
+    "duration": 5.46
+  },
+  {
+    "text": "married to gives birth to something that",
+    "start": 2027.09,
+    "duration": 6.63
+  },
+  {
+    "text": "looks completely anthropomorphic I told",
+    "start": 2029.4,
+    "duration": 5.94
+  },
+  {
+    "text": "you you'd think these explanations are",
+    "start": 2033.72,
+    "duration": 6.47
+  },
+  {
+    "text": "pretty silly but if you just focus on it",
+    "start": 2035.34,
+    "duration": 8.94
+  },
+  {
+    "text": "for the very real theological advance it",
+    "start": 2040.19,
+    "duration": 7.24
+  },
+  {
+    "text": "makes a transition from big ball of fire",
+    "start": 2044.28,
+    "duration": 6.3
+  },
+  {
+    "text": "that you can't control to a wild and",
+    "start": 2047.43,
+    "duration": 6.87
+  },
+  {
+    "text": "crazy' anthropomorphic God",
+    "start": 2050.58,
+    "duration": 9.3
+  },
+  {
+    "text": "that is very real progress indeed guess",
+    "start": 2054.3,
+    "duration": 9.5
+  },
+  {
+    "text": "does anybody want to guess who",
+    "start": 2059.88,
+    "duration": 8.73
+  },
+  {
+    "text": "Helios his sister is your name is Erica",
+    "start": 2063.8,
+    "duration": 7.62
+  },
+  {
+    "text": "do you want to guess who his sister is",
+    "start": 2068.61,
+    "duration": 9.69
+  },
+  {
+    "text": "no that's his dad the moon okay the moon",
+    "start": 2071.42,
+    "duration": 12.72
+  },
+  {
+    "text": "goddess Shalini is Helios his sister",
+    "start": 2078.3,
+    "duration": 5.84
+  },
+  {
+    "text": "she's a great-looking babe with long",
+    "start": 2084.71,
+    "duration": 6.01
+  },
+  {
+    "text": "flowing hair I'm not drawing well today",
+    "start": 2087.66,
+    "duration": 6.24
+  },
+  {
+    "text": "because I'm barely awake but just like",
+    "start": 2090.72,
+    "duration": 5.97
+  },
+  {
+    "text": "Helia Shalini the ancient Greek word",
+    "start": 2093.9,
+    "duration": 5.04
+  },
+  {
+    "text": "Shalini I'll write that on the board",
+    "start": 2096.69,
+    "duration": 8.07
+  },
+  {
+    "text": "means moon and she is portrayed as a",
+    "start": 2098.94,
+    "duration": 8.91
+  },
+  {
+    "text": "beautiful pale skinned goddess who",
+    "start": 2104.76,
+    "duration": 7.22
+  },
+  {
+    "text": "drives a chariot containing the moon",
+    "start": 2107.85,
+    "duration": 9.57
+  },
+  {
+    "text": "they have another sister whose name is",
+    "start": 2111.98,
+    "duration": 11.01
+  },
+  {
+    "text": "EOS cos who is the goddess of the dawn",
+    "start": 2117.42,
+    "duration": 10.53
+  },
+  {
+    "text": "isn't that nice the ancient Greek god",
+    "start": 2122.99,
+    "duration": 7.24
+  },
+  {
+    "text": "Hyperion whose name means the thingy",
+    "start": 2127.95,
+    "duration": 6.71
+  },
+  {
+    "text": "that goes through the sky has a son",
+    "start": 2130.23,
+    "duration": 7.44
+  },
+  {
+    "text": "named Helios who is the Sun God a",
+    "start": 2134.66,
+    "duration": 5.59
+  },
+  {
+    "text": "daughter named Shalini who is the moon",
+    "start": 2137.67,
+    "duration": 7.65
+  },
+  {
+    "text": "goddess and a daughter named EOS cos who",
+    "start": 2140.25,
+    "duration": 11.82
+  },
+  {
+    "text": "is the goddess of the dawn and can you",
+    "start": 2145.32,
+    "duration": 9.93
+  },
+  {
+    "text": "tell that they're siblings just watch",
+    "start": 2152.07,
+    "duration": 8.16
+  },
+  {
+    "text": "just watch these ancient Greek gods and",
+    "start": 2155.25,
+    "duration": 8.55
+  },
+  {
+    "text": "goddesses become so anthropomorphic that",
+    "start": 2160.23,
+    "duration": 8.45
+  },
+  {
+    "text": "they take on discernible family traits",
+    "start": 2163.8,
+    "duration": 10.22
+  },
+  {
+    "text": "this particular bunch of kids Helios",
+    "start": 2168.68,
+    "duration": 9.15
+  },
+  {
+    "text": "Shalini and EOS are characterized by",
+    "start": 2174.02,
+    "duration": 7.35
+  },
+  {
+    "text": "personal irresponsibility I would say",
+    "start": 2177.83,
+    "duration": 8.68
+  },
+  {
+    "text": "and really well-developed libido that is",
+    "start": 2181.37,
+    "duration": 6.88
+  },
+  {
+    "text": "to say they're out there",
+    "start": 2186.51,
+    "duration": 4.13
+  },
+  {
+    "text": "looking for talent they're out there",
+    "start": 2188.25,
+    "duration": 5.99
+  },
+  {
+    "text": "looking for people to get friendly with",
+    "start": 2190.64,
+    "duration": 8.41
+  },
+  {
+    "text": "let's start out with the story let me",
+    "start": 2194.24,
+    "duration": 6.94
+  },
+  {
+    "text": "grab my notes make sure I get it right",
+    "start": 2199.05,
+    "duration": 5.51
+  },
+  {
+    "text": "of shalini the moon goddess",
+    "start": 2201.18,
+    "duration": 7.59
+  },
+  {
+    "text": "one day as Shalini is making her rounds",
+    "start": 2204.56,
+    "duration": 11.23
+  },
+  {
+    "text": "as the moon goddess she works 365 days a",
+    "start": 2208.77,
+    "duration": 7.56
+  },
+  {
+    "text": "year",
+    "start": 2215.79,
+    "duration": 2.91
+  },
+  {
+    "text": "it gets kind of lonely being a moon",
+    "start": 2216.33,
+    "duration": 4.38
+  },
+  {
+    "text": "goddess you're either sleeping or",
+    "start": 2218.7,
+    "duration": 7.26
+  },
+  {
+    "text": "driving in your chariot she sees this",
+    "start": 2220.71,
+    "duration": 8.94
+  },
+  {
+    "text": "incredibly studly young guy by the name",
+    "start": 2225.96,
+    "duration": 8.46
+  },
+  {
+    "text": "of Endymion just lying on a mountainside",
+    "start": 2229.65,
+    "duration": 9.39
+  },
+  {
+    "text": "he's a studly young Shepherd sleeping",
+    "start": 2234.42,
+    "duration": 10.74
+  },
+  {
+    "text": "away Shalini takes a liking to this",
+    "start": 2239.04,
+    "duration": 8.01
+  },
+  {
+    "text": "studly young shepherd who's lying there",
+    "start": 2245.16,
+    "duration": 5.25
+  },
+  {
+    "text": "sleeping away who could play this",
+    "start": 2247.05,
+    "duration": 5.309
+  },
+  {
+    "text": "Shepherd in a movie who knows it was",
+    "start": 2250.41,
+    "duration": 5.27
+  },
+  {
+    "text": "some studly young actor she looks down",
+    "start": 2252.359,
+    "duration": 6.211
+  },
+  {
+    "text": "she says I want to have this studly",
+    "start": 2255.68,
+    "duration": 6.82
+  },
+  {
+    "text": "young shepherd so she runs to Zeus king",
+    "start": 2258.57,
+    "duration": 6.72
+  },
+  {
+    "text": "of the ancient Greek gods and says can I",
+    "start": 2262.5,
+    "duration": 6.69
+  },
+  {
+    "text": "have this studly young Shepherd and Zeus",
+    "start": 2265.29,
+    "duration": 6.21
+  },
+  {
+    "text": "says hey why not",
+    "start": 2269.19,
+    "duration": 6.929
+  },
+  {
+    "text": "and so Cellini the moon goddess gets to",
+    "start": 2271.5,
+    "duration": 10.76
+  },
+  {
+    "text": "have Endymion as her boy-toy if you will",
+    "start": 2276.119,
+    "duration": 6.141
+  },
+  {
+    "text": "and in one version of the story Cellini",
+    "start": 2283.49,
+    "duration": 9.43
+  },
+  {
+    "text": "then asks Endymion Selenia asks Zeus to",
+    "start": 2287.43,
+    "duration": 12.0
+  },
+  {
+    "text": "give Endymion eternal sleep yeah she",
+    "start": 2292.92,
+    "duration": 8.79
+  },
+  {
+    "text": "just wants to look at you know",
+    "start": 2299.43,
+    "duration": 4.71
+  },
+  {
+    "text": "studmuffin she just wants to look at him",
+    "start": 2301.71,
+    "duration": 6.54
+  },
+  {
+    "text": "right forever eternal beauty and eternal",
+    "start": 2304.14,
+    "duration": 10.08
+  },
+  {
+    "text": "youth and Zeus says yes to this - I am",
+    "start": 2308.25,
+    "duration": 10.71
+  },
+  {
+    "text": "my question is this lusty zesty young",
+    "start": 2314.22,
+    "duration": 7.19
+  },
+  {
+    "text": "goddess sees a lusty zesty",
+    "start": 2318.96,
+    "duration": 4.34
+  },
+  {
+    "text": "young shepherd sleeping on a mountaintop",
+    "start": 2321.41,
+    "duration": 7.22
+  },
+  {
+    "text": "and she asked if she can have him I",
+    "start": 2323.3,
+    "duration": 5.33
+  },
+  {
+    "text": "doubt very seriously whether she's going",
+    "start": 2329.26,
+    "duration": 6.49
+  },
+  {
+    "text": "to ask that he sleep forever and be",
+    "start": 2332.18,
+    "duration": 9.3
+  },
+  {
+    "text": "forever young but who knows and he is",
+    "start": 2335.75,
+    "duration": 9.71
+  },
+  {
+    "text": "still supposedly sleeping to this day",
+    "start": 2341.48,
+    "duration": 10.35
+  },
+  {
+    "text": "Yas goddess of the dawn is an equally",
+    "start": 2345.46,
+    "duration": 9.67
+  },
+  {
+    "text": "lusty zesty young goddess I might point",
+    "start": 2351.83,
+    "duration": 6.45
+  },
+  {
+    "text": "out here I will point out here it's my",
+    "start": 2355.13,
+    "duration": 8.07
+  },
+  {
+    "text": "class that the great majority of ancient",
+    "start": 2358.28,
+    "duration": 9.72
+  },
+  {
+    "text": "Greek goddesses have know little or no",
+    "start": 2363.2,
+    "duration": 8.13
+  },
+  {
+    "text": "libido whatsoever that is to say that",
+    "start": 2368.0,
+    "duration": 6.99
+  },
+  {
+    "text": "you read about lusty zesty gods chasing",
+    "start": 2371.33,
+    "duration": 6.6
+  },
+  {
+    "text": "after mortal goddess mortal women all",
+    "start": 2374.99,
+    "duration": 6.51
+  },
+  {
+    "text": "the time you very seldom read about",
+    "start": 2377.93,
+    "duration": 7.79
+  },
+  {
+    "text": "goddesses chasing after humans human men",
+    "start": 2381.5,
+    "duration": 6.54
+  },
+  {
+    "text": "this is because we're dealing with a",
+    "start": 2385.72,
+    "duration": 5.95
+  },
+  {
+    "text": "patriarchal society here that the old",
+    "start": 2388.04,
+    "duration": 6.81
+  },
+  {
+    "text": "double standard of patriarchal societies",
+    "start": 2391.67,
+    "duration": 7.68
+  },
+  {
+    "text": "a man who messes around it you know who",
+    "start": 2394.85,
+    "duration": 7.97
+  },
+  {
+    "text": "is very sexually active is a stud",
+    "start": 2399.35,
+    "duration": 6.69
+  },
+  {
+    "text": "according to this double standard where",
+    "start": 2402.82,
+    "duration": 5.98
+  },
+  {
+    "text": "there are many very insulting names for",
+    "start": 2406.04,
+    "duration": 4.59
+  },
+  {
+    "text": "a woman who is sexually active that I",
+    "start": 2408.8,
+    "duration": 4.68
+  },
+  {
+    "text": "will not repeat here this double",
+    "start": 2410.63,
+    "duration": 5.79
+  },
+  {
+    "text": "standard was alive and kicking back in",
+    "start": 2413.48,
+    "duration": 6.78
+  },
+  {
+    "text": "the ancient Greek days goddesses who act",
+    "start": 2416.42,
+    "duration": 7.79
+  },
+  {
+    "text": "on their sexual desires like Shalini and",
+    "start": 2420.26,
+    "duration": 9.03
+  },
+  {
+    "text": "Soong EOS are very rare indeed so I",
+    "start": 2424.21,
+    "duration": 7.6
+  },
+  {
+    "text": "suggest we enjoy hearing these stories",
+    "start": 2429.29,
+    "duration": 7.47
+  },
+  {
+    "text": "while we can EOS sees a studly young",
+    "start": 2431.81,
+    "duration": 12.0
+  },
+  {
+    "text": "shepherd by the name of TIFF onus she",
+    "start": 2436.76,
+    "duration": 9.21
+  },
+  {
+    "text": "takes a liking to studly young teeth",
+    "start": 2443.81,
+    "duration": 5.91
+  },
+  {
+    "text": "onus she asks Zeus if she can have",
+    "start": 2445.97,
+    "duration": 7.2
+  },
+  {
+    "text": "Tiff's onus and Xue says yeah go for it",
+    "start": 2449.72,
+    "duration": 5.43
+  },
+  {
+    "text": "you can have this too",
+    "start": 2453.17,
+    "duration": 9.18
+  },
+  {
+    "text": "Onis and EOS and teeth bonus live for",
+    "start": 2455.15,
+    "duration": 10.74
+  },
+  {
+    "text": "many years together and happily married",
+    "start": 2462.35,
+    "duration": 5.97
+  },
+  {
+    "text": "bliss we presume they're married maybe",
+    "start": 2465.89,
+    "duration": 6.9
+  },
+  {
+    "text": "they're not I don't care but as soon as",
+    "start": 2468.32,
+    "duration": 8.55
+  },
+  {
+    "text": "tiff ona starts to get old starts to",
+    "start": 2472.79,
+    "duration": 5.94
+  },
+  {
+    "text": "lose just a little bit of the hair",
+    "start": 2476.87,
+    "duration": 4.65
+  },
+  {
+    "text": "starts to get a little grey maybe just a",
+    "start": 2478.73,
+    "duration": 8.54
+  },
+  {
+    "text": "little bit punchy EOS gets tired of him",
+    "start": 2481.52,
+    "duration": 9.21
+  },
+  {
+    "text": "just as happens on every soap opera",
+    "start": 2487.27,
+    "duration": 6.94
+  },
+  {
+    "text": "you've ever heard of right except for",
+    "start": 2490.73,
+    "duration": 5.67
+  },
+  {
+    "text": "it's a goddess deciding to get rid of",
+    "start": 2494.21,
+    "duration": 6.69
+  },
+  {
+    "text": "her male mortal lover finally when he",
+    "start": 2496.4,
+    "duration": 6.6
+  },
+  {
+    "text": "gets so old and decrepit looking that",
+    "start": 2500.9,
+    "duration": 4.02
+  },
+  {
+    "text": "she can't even stand to look at him",
+    "start": 2503.0,
+    "duration": 5.52
+  },
+  {
+    "text": "anymore she shuts him up in a room and",
+    "start": 2504.92,
+    "duration": 7.71
+  },
+  {
+    "text": "won't let him out in vain does tooth",
+    "start": 2508.52,
+    "duration": 9.05
+  },
+  {
+    "text": "bonus screech out his undying love",
+    "start": 2512.63,
+    "duration": 8.97
+  },
+  {
+    "text": "poor guys immortal but she forgot to ask",
+    "start": 2517.57,
+    "duration": 8.08
+  },
+  {
+    "text": "for immortal youth for him so now he's",
+    "start": 2521.6,
+    "duration": 6.3
+  },
+  {
+    "text": "just stuck in that room getting older",
+    "start": 2525.65,
+    "duration": 5.85
+  },
+  {
+    "text": "and older and older until he becomes the",
+    "start": 2527.9,
+    "duration": 9.42
+  },
+  {
+    "text": "first grasshopper yep this is the",
+    "start": 2531.5,
+    "duration": 9.33
+  },
+  {
+    "text": "ancient Greek etiology the explanation",
+    "start": 2537.32,
+    "duration": 4.88
+  },
+  {
+    "text": "of the grasshopper",
+    "start": 2540.83,
+    "duration": 3.93
+  },
+  {
+    "text": "apparently teeth onus just got so old",
+    "start": 2542.2,
+    "duration": 5.83
+  },
+  {
+    "text": "and shriveled that he stopped being a",
+    "start": 2544.76,
+    "duration": 6.05
+  },
+  {
+    "text": "human and started being a grasshopper I",
+    "start": 2548.03,
+    "duration": 7.95
+  },
+  {
+    "text": "know it's silly but I'm doing what I can",
+    "start": 2550.81,
+    "duration": 8.05
+  },
+  {
+    "text": "I have one more story for you you've",
+    "start": 2555.98,
+    "duration": 8.64
+  },
+  {
+    "text": "been a very good class and then I will",
+    "start": 2558.86,
+    "duration": 9.38
+  },
+  {
+    "text": "let you go for today how many of you",
+    "start": 2564.62,
+    "duration": 7.65
+  },
+  {
+    "text": "have ever been 16 years old raise your",
+    "start": 2568.24,
+    "duration": 6.4
+  },
+  {
+    "text": "hand I just wanted to see people raise",
+    "start": 2572.27,
+    "duration": 4.56
+  },
+  {
+    "text": "their hands you usually get your",
+    "start": 2574.64,
+    "duration": 4.38
+  },
+  {
+    "text": "driver's license when you're 16 years",
+    "start": 2576.83,
+    "duration": 5.07
+  },
+  {
+    "text": "old right or there abouts then your mom",
+    "start": 2579.02,
+    "duration": 5.67
+  },
+  {
+    "text": "and your dad tell you don't drive too",
+    "start": 2581.9,
+    "duration": 6.63
+  },
+  {
+    "text": "fast so what do you do",
+    "start": 2584.69,
+    "duration": 6.78
+  },
+  {
+    "text": "you drive too fast how many of you in",
+    "start": 2588.53,
+    "duration": 4.83
+  },
+  {
+    "text": "this room got a speeding ticket within",
+    "start": 2591.47,
+    "duration": 3.21
+  },
+  {
+    "text": "one month of getting your driver's",
+    "start": 2593.36,
+    "duration": 6.57
+  },
+  {
+    "text": "license I waited three weeks but you see",
+    "start": 2594.68,
+    "duration": 9.03
+  },
+  {
+    "text": "the basic principle right if your",
+    "start": 2599.93,
+    "duration": 6.66
+  },
+  {
+    "text": "parents tell you to drive slowly driving",
+    "start": 2603.71,
+    "duration": 6.26
+  },
+  {
+    "text": "the correct lane always use your signals",
+    "start": 2606.59,
+    "duration": 6.09
+  },
+  {
+    "text": "you have this impulsive urge to do a",
+    "start": 2609.97,
+    "duration": 5.2
+  },
+  {
+    "text": "doughnut on somebody's lawn at fifty",
+    "start": 2612.68,
+    "duration": 4.28
+  },
+  {
+    "text": "miles an hour",
+    "start": 2615.17,
+    "duration": 4.98
+  },
+  {
+    "text": "kids always are that way they will",
+    "start": 2616.96,
+    "duration": 5.98
+  },
+  {
+    "text": "always be that way I'm gonna offer you a",
+    "start": 2620.15,
+    "duration": 4.71
+  },
+  {
+    "text": "little proof that they always have been",
+    "start": 2622.94,
+    "duration": 7.44
+  },
+  {
+    "text": "that way Helios the Sun God was a pretty",
+    "start": 2624.86,
+    "duration": 9.21
+  },
+  {
+    "text": "lonely kind of God like his sister",
+    "start": 2630.38,
+    "duration": 6.93
+  },
+  {
+    "text": "Shalini he had to spend long hours",
+    "start": 2634.07,
+    "duration": 6.77
+  },
+  {
+    "text": "driving a chariot through the sky in",
+    "start": 2637.31,
+    "duration": 8.07
+  },
+  {
+    "text": "Helios his case he had to spend at least",
+    "start": 2640.84,
+    "duration": 9.85
+  },
+  {
+    "text": "12 hours a day seven days a week 52",
+    "start": 2645.38,
+    "duration": 7.05
+  },
+  {
+    "text": "weeks out of the year driving the",
+    "start": 2650.69,
+    "duration": 3.51
+  },
+  {
+    "text": "chariot of the Sun through the sky it",
+    "start": 2652.43,
+    "duration": 7.23
+  },
+  {
+    "text": "gets lonely sometimes he'd stop off meet",
+    "start": 2654.2,
+    "duration": 7.62
+  },
+  {
+    "text": "a friendly stranger for a chance one",
+    "start": 2659.66,
+    "duration": 6.44
+  },
+  {
+    "text": "night encounter and then be on his way",
+    "start": 2661.82,
+    "duration": 6.72
+  },
+  {
+    "text": "my god I think we have just met the",
+    "start": 2666.1,
+    "duration": 5.74
+  },
+  {
+    "text": "prototype of the studly man who can't",
+    "start": 2668.54,
+    "duration": 7.56
+  },
+  {
+    "text": "commit because he can't commit he has to",
+    "start": 2671.84,
+    "duration": 7.8
+  },
+  {
+    "text": "put his job ahead but one night well",
+    "start": 2676.1,
+    "duration": 8.37
+  },
+  {
+    "text": "he's an ancient Ethiopia he mingles in",
+    "start": 2679.64,
+    "duration": 7.56
+  },
+  {
+    "text": "love with a young sea nymph by the name",
+    "start": 2684.47,
+    "duration": 3.0
+  },
+  {
+    "text": "of",
+    "start": 2687.2,
+    "duration": 9.03
+  },
+  {
+    "text": "climene II since Helios is a god they",
+    "start": 2687.47,
+    "duration": 10.29
+  },
+  {
+    "text": "only have a one-night stand but that",
+    "start": 2696.23,
+    "duration": 4.64
+  },
+  {
+    "text": "one-night stand if you will is enough",
+    "start": 2697.76,
+    "duration": 9.09
+  },
+  {
+    "text": "this is Helios this one-night-stand",
+    "start": 2700.87,
+    "duration": 10.56
+  },
+  {
+    "text": "produces a kid by the name of FEA thon",
+    "start": 2706.85,
+    "duration": 10.59
+  },
+  {
+    "text": "actually it's this FEA fine FEA thawne",
+    "start": 2711.43,
+    "duration": 8.89
+  },
+  {
+    "text": "of necessity grows up in a single-parent",
+    "start": 2717.44,
+    "duration": 4.8
+  },
+  {
+    "text": "family with his mother",
+    "start": 2720.32,
+    "duration": 6.499
+  },
+  {
+    "text": "because his father is the sun-god of",
+    "start": 2722.24,
+    "duration": 8.43
+  },
+  {
+    "text": "course we all know that little kids can",
+    "start": 2726.819,
+    "duration": 7.721
+  },
+  {
+    "text": "often be very very cruel as young",
+    "start": 2730.67,
+    "duration": 6.36
+  },
+  {
+    "text": "Phaethon is growing up in ancient",
+    "start": 2734.54,
+    "duration": 6.99
+  },
+  {
+    "text": "Ethiopia the little kids taunt him who's",
+    "start": 2737.03,
+    "duration": 8.64
+  },
+  {
+    "text": "your daddy who's your daddy and he says",
+    "start": 2741.53,
+    "duration": 9.45
+  },
+  {
+    "text": "my dad is the Sun God Helios oh yeah",
+    "start": 2745.67,
+    "duration": 6.63
+  },
+  {
+    "text": "sure sure",
+    "start": 2750.98,
+    "duration": 5.339
+  },
+  {
+    "text": "my dad is Trent Reznor or something like",
+    "start": 2752.3,
+    "duration": 9.51
+  },
+  {
+    "text": "that I'm Abraham Lincoln jr. nobody",
+    "start": 2756.319,
+    "duration": 9.54
+  },
+  {
+    "text": "believes him but the more they taunt him",
+    "start": 2761.81,
+    "duration": 5.61
+  },
+  {
+    "text": "the more yeah I really am",
+    "start": 2765.859,
+    "duration": 6.48
+  },
+  {
+    "text": "and the sun-god son and finally he goes",
+    "start": 2767.42,
+    "duration": 9.06
+  },
+  {
+    "text": "to his mother and he says mom am I",
+    "start": 2772.339,
+    "duration": 6.691
+  },
+  {
+    "text": "really the son of the influential Sun",
+    "start": 2776.48,
+    "duration": 7.07
+  },
+  {
+    "text": "God Helios she says yes you are honey",
+    "start": 2779.03,
+    "duration": 8.46
+  },
+  {
+    "text": "he then says prove it well she can't",
+    "start": 2783.55,
+    "duration": 5.799
+  },
+  {
+    "text": "prove it but she says I'll tell you what",
+    "start": 2787.49,
+    "duration": 4.77
+  },
+  {
+    "text": "to do go to the palace of your dad the",
+    "start": 2789.349,
+    "duration": 9.361
+  },
+  {
+    "text": "Sun God Helios and ask him Wow when a",
+    "start": 2792.26,
+    "duration": 8.49
+  },
+  {
+    "text": "mom is confronted with a difficult",
+    "start": 2798.71,
+    "duration": 6.83
+  },
+  {
+    "text": "situation with her kid what does she say",
+    "start": 2800.75,
+    "duration": 9.02
+  },
+  {
+    "text": "go talk to your dad okay",
+    "start": 2805.54,
+    "duration": 6.819
+  },
+  {
+    "text": "only we're talking about ancient Greek",
+    "start": 2809.77,
+    "duration": 8.079
+  },
+  {
+    "text": "gods from three millennia ago behaving",
+    "start": 2812.359,
+    "duration": 8.301
+  },
+  {
+    "text": "like this and it gets better",
+    "start": 2817.849,
+    "duration": 5.641
+  },
+  {
+    "text": "young faiths on journeys to visit his",
+    "start": 2820.66,
+    "duration": 5.8
+  },
+  {
+    "text": "father Helios the Sun God who lives this",
+    "start": 2823.49,
+    "duration": 8.16
+  },
+  {
+    "text": "great big huge bright palace he's led",
+    "start": 2826.46,
+    "duration": 7.53
+  },
+  {
+    "text": "into the palace of Helios and Helios is",
+    "start": 2831.65,
+    "duration": 4.11
+  },
+  {
+    "text": "sitting there and his big huge beautiful",
+    "start": 2833.99,
+    "duration": 5.78
+  },
+  {
+    "text": "throne and Phaeton says are you my dad",
+    "start": 2835.76,
+    "duration": 11.41
+  },
+  {
+    "text": "yes son I am well dan in",
+    "start": 2839.77,
+    "duration": 9.68
+  },
+  {
+    "text": "they'e found proceeds to lay this",
+    "start": 2847.17,
+    "duration": 5.31
+  },
+  {
+    "text": "unbelievable guilt trip on him where",
+    "start": 2849.45,
+    "duration": 6.41
+  },
+  {
+    "text": "were you and I was growing up dad",
+    "start": 2852.48,
+    "duration": 7.02
+  },
+  {
+    "text": "and this'll well I was the Sun God I was",
+    "start": 2855.86,
+    "duration": 8.56
+  },
+  {
+    "text": "busy routine isn't cutting it now any of",
+    "start": 2859.5,
+    "duration": 6.54
+  },
+  {
+    "text": "you who are parents or any of you who",
+    "start": 2864.42,
+    "duration": 4.26
+  },
+  {
+    "text": "have parents just not if this sounds",
+    "start": 2866.04,
+    "duration": 3.48
+  },
+  {
+    "text": "familiar",
+    "start": 2868.68,
+    "duration": 4.64
+  },
+  {
+    "text": "I've been a bad father I've let you down",
+    "start": 2869.52,
+    "duration": 6.69
+  },
+  {
+    "text": "how about if I give you something really",
+    "start": 2873.32,
+    "duration": 6.73
+  },
+  {
+    "text": "expensive does that ever happen let me",
+    "start": 2876.21,
+    "duration": 5.91
+  },
+  {
+    "text": "make it up to you and then mom or dad",
+    "start": 2880.05,
+    "duration": 4.47
+  },
+  {
+    "text": "whips out a checkbook and buys you",
+    "start": 2882.12,
+    "duration": 8.73
+  },
+  {
+    "text": "something really cool here's what helio",
+    "start": 2884.52,
+    "duration": 10.59
+  },
+  {
+    "text": "says my son I feel very bad I will grant",
+    "start": 2890.85,
+    "duration": 5.21
+  },
+  {
+    "text": "you one wish",
+    "start": 2895.11,
+    "duration": 5.22
+  },
+  {
+    "text": "whatever wish you want I swear by the",
+    "start": 2896.06,
+    "duration": 6.99
+  },
+  {
+    "text": "River Styx that I will grant it to you",
+    "start": 2900.33,
+    "duration": 5.49
+  },
+  {
+    "text": "and whenever you hear an ancient Greek",
+    "start": 2903.05,
+    "duration": 4.84
+  },
+  {
+    "text": "god or goddess swearing by the River",
+    "start": 2905.82,
+    "duration": 6.06
+  },
+  {
+    "text": "Styx that is a warning sight and that a",
+    "start": 2907.89,
+    "duration": 8.49
+  },
+  {
+    "text": "bad career move is coming up you put",
+    "start": 2911.88,
+    "duration": 7.59
+  },
+  {
+    "text": "that down bad career move because if an",
+    "start": 2916.38,
+    "duration": 5.34
+  },
+  {
+    "text": "ancient Greek god or goddess swears by",
+    "start": 2919.47,
+    "duration": 4.02
+  },
+  {
+    "text": "the River Styx and then violates the",
+    "start": 2921.72,
+    "duration": 3.78
+  },
+  {
+    "text": "oath they have to spend seven years",
+    "start": 2923.49,
+    "duration": 8.28
+  },
+  {
+    "text": "being dead and you can't imagine what a",
+    "start": 2925.5,
+    "duration": 8.4
+  },
+  {
+    "text": "bummer that is for an ancient Greek",
+    "start": 2931.77,
+    "duration": 4.29
+  },
+  {
+    "text": "goddess or God to be dead for seven",
+    "start": 2933.9,
+    "duration": 4.5
+  },
+  {
+    "text": "years you're lying there dead and all",
+    "start": 2936.06,
+    "duration": 4.38
+  },
+  {
+    "text": "the other gods and goddesses come by and",
+    "start": 2938.4,
+    "duration": 3.93
+  },
+  {
+    "text": "laugh at you and call you a deadiy or",
+    "start": 2940.44,
+    "duration": 6.78
+  },
+  {
+    "text": "something like that and Helio says I",
+    "start": 2942.33,
+    "duration": 6.69
+  },
+  {
+    "text": "will swear by the River Styx to grant",
+    "start": 2947.22,
+    "duration": 2.78
+  },
+  {
+    "text": "you this wish",
+    "start": 2949.02,
+    "duration": 3.54
+  },
+  {
+    "text": "what does Pathan wish for he wants the",
+    "start": 2950.0,
+    "duration": 5.47
+  },
+  {
+    "text": "keys to the chariot of the Sun he wants",
+    "start": 2952.56,
+    "duration": 6.33
+  },
+  {
+    "text": "to drive the chariot of the Sun Helio",
+    "start": 2955.47,
+    "duration": 7.23
+  },
+  {
+    "text": "says anything but that no no no anything",
+    "start": 2958.89,
+    "duration": 6.33
+  },
+  {
+    "text": "but that in Fayette on says dad you",
+    "start": 2962.7,
+    "duration": 5.93
+  },
+  {
+    "text": "swore by the River Styx and so now",
+    "start": 2965.22,
+    "duration": 5.94
+  },
+  {
+    "text": "Phaeton gets to drive the chariot of the",
+    "start": 2968.63,
+    "duration": 5.88
+  },
+  {
+    "text": "Sun God whether it's for powerful horses",
+    "start": 2971.16,
+    "duration": 7.35
+  },
+  {
+    "text": "in vain Fame Helio says well don't drive",
+    "start": 2974.51,
+    "duration": 6.58
+  },
+  {
+    "text": "too fast don't drive too slow",
+    "start": 2978.51,
+    "duration": 5.46
+  },
+  {
+    "text": "fly too high don't fly too low the sort",
+    "start": 2981.09,
+    "duration": 4.59
+  },
+  {
+    "text": "of things that your mom and your dad and",
+    "start": 2983.97,
+    "duration": 4.83
+  },
+  {
+    "text": "my mom and my dad hi mom hi dad told me",
+    "start": 2985.68,
+    "duration": 5.84
+  },
+  {
+    "text": "when I was learning to drive right and",
+    "start": 2988.8,
+    "duration": 5.79
+  },
+  {
+    "text": "your inclination is to try flying too",
+    "start": 2991.52,
+    "duration": 7.03
+  },
+  {
+    "text": "low then try flying too high driving too",
+    "start": 2994.59,
+    "duration": 6.93
+  },
+  {
+    "text": "fast driving too slow right that's what",
+    "start": 2998.55,
+    "duration": 4.71
+  },
+  {
+    "text": "you do because you're a kid and you",
+    "start": 3001.52,
+    "duration": 4.16
+  },
+  {
+    "text": "don't know any better you're programmed",
+    "start": 3003.26,
+    "duration": 6.06
+  },
+  {
+    "text": "well Fay Athan flies too high play it",
+    "start": 3005.68,
+    "duration": 9.07
+  },
+  {
+    "text": "and he creates the ice caps that the",
+    "start": 3009.32,
+    "duration": 8.1
+  },
+  {
+    "text": "frozen regions to the north he flies too",
+    "start": 3014.75,
+    "duration": 6.68
+  },
+  {
+    "text": "low and creates the Sahara Desert",
+    "start": 3017.42,
+    "duration": 5.96
+  },
+  {
+    "text": "finally",
+    "start": 3021.43,
+    "duration": 5.49
+  },
+  {
+    "text": "Zeus realizes that this kid can't drive",
+    "start": 3023.38,
+    "duration": 6.76
+  },
+  {
+    "text": "55 or anything else so he throws a",
+    "start": 3026.92,
+    "duration": 6.1
+  },
+  {
+    "text": "thunderbolt and it smacks the chariot of",
+    "start": 3030.14,
+    "duration": 8.06
+  },
+  {
+    "text": "the Sun God kills faith on and a story",
+    "start": 3033.02,
+    "duration": 10.34
+  },
+  {
+    "text": "end of class for today",
+    "start": 3038.2,
+    "duration": 5.16
+  }
+]

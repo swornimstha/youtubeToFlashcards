@@ -1,25 +1,45 @@
-
-# Virtual environments
-.venv/
-env/
-venv/
-
-# Secrets
-.env
-
-# Generated outputs
-*.apkg
-*.txt
-*.json
-summaries/
-reduced/
-
-# Python cache
+# Python artifacts
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 
-# OS system files
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Anki output
+apkg/
+flashcardTxt/
+reduced/
+summaries/
+transcripts/
+currentTitle.json
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS-specific files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore examples if you want to track only source code
+# examples/

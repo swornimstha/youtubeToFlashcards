@@ -21,7 +21,7 @@ API_KEY = os.getenv("MISTRAL_API_KEY")
 if not API_KEY:
     raise ValueError("MISTRAL_API_KEY not found in environment variables")
 
-MODEL = "mistral-small-latest"
+MODEL = "mistral-large-latest"
 client = Mistral(api_key=API_KEY)
 
 def call_mistral_with_retry(prompt, max_retries=5, base_delay=5):

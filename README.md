@@ -1,31 +1,33 @@
-# YouTube to Anki Flashcards Pipeline
+---
 
-This repository provides a complete pipeline to convert YouTube videos into structured Anki flashcards. It fetches transcripts, preprocesses them, summarizes content using Mistral AI, and generates HTML-formatted flashcards packaged into an Anki `.apkg` deck.
+# YouTube → Anki Flashcards Pipeline
+
+A complete pipeline to convert YouTube videos into structured Anki flashcards. This system fetches transcripts, preprocesses them, summarizes content using Mistral AI, and generates HTML-styled flashcards packaged into an import-ready Anki `.apkg` deck.
 
 ---
 
 ## Features
 
-- **YouTube Transcript Fetching**: Retrieves transcripts in multiple languages.
-- **Transcript Reduction**: Merges short segments into coherent, LLM-ready chunks.
-- **Chunk Summarization**: Summarizes each chunk individually using Mistral AI, ensuring clarity and completeness.
-- **Anki Flashcard Generation**: Converts summaries into tab-separated question-answer flashcards.
-- **HTML Formatting**: Questions are bold and large; answers are lighter, centered, and styled with Gontserrat font and purple accents.
-- **Automatic Packaging**: Outputs a ready-to-import `.apkg` Anki deck.
+* **YouTube Transcript Fetching**: Retrieve transcripts in multiple languages.
+* **Transcript Reduction**: Merge short segments into coherent, LLM-ready chunks.
+* **Chunk Summarization**: Summarize each chunk individually with Mistral AI, preserving clarity, accuracy, and completeness.
+* **Anki Flashcard Generation**: Convert summaries into atomic question–answer flashcards.
+* **HTML Formatting**: Questions are bold and prominent; answers are lighter, centered, and styled with Gontserrat fonts and purple accents.
+* **Automatic Packaging**: Outputs a ready-to-import `.apkg` Anki deck.
 
 ---
 
 ## Requirements
 
-- Python 3.13+
-- Virtual environment recommended (`python -m venv .venv`)
-- Dependencies:
+* **Python** 3.13+
+* **Virtual Environment** recommended (`python -m venv .venv`)
+* **Dependencies**:
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
-* Environment variables:
+* **Environment variables**:
 
 ```bash
 MISTRAL_API_KEY=<your_mistral_api_key>
@@ -42,7 +44,7 @@ git clone <repo_url>
 cd youtubeToFlashcards
 ```
 
-2. Activate virtual environment:
+2. Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
@@ -56,7 +58,7 @@ source .venv/bin/activate  # Linux/macOS
 pip install -r requirements.txt
 ```
 
-4. Set your API key in `.env`:
+4. Set your Mistral API key in `.env`:
 
 ```
 MISTRAL_API_KEY=your_key_here
@@ -66,16 +68,16 @@ MISTRAL_API_KEY=your_key_here
 
 ## Usage
 
-Run the master pipeline script:
+Run the master pipeline:
 
 ```bash
-python pipeline.py <YOUTUBE_VIDEO_ID>
+python pipeline.py <YOUTUBE_VIDEO_URL_OR_ID>
 ```
 
 **Example**:
 
 ```bash
-python pipeline.py bqsXWmZHcFQ
+python pipeline.py https://www.youtube.com/watch?v=bqsXWmZHcFQ
 ```
 
 This performs the following steps:
@@ -88,25 +90,25 @@ This performs the following steps:
 
 **Outputs**:
 
-* `transcripts/<video_id>_transcript.json`
-* `reduced/<video_id>_reduced.txt`
-* `summaries/<video_id>_reduced/full_summary.txt`
-* `flashcards/<video_id>_flashcards.txt`
-* `flashcards/<video_id>_flashcards.apkg`
+* `transcripts/<sanitized_title>_transcript.json`
+* `reduced/<sanitized_title>_transcript_reduced.txt`
+* `summaries/<sanitized_title>/full_summary.txt`
+* `flashcardTxt/<sanitized_title>.txt`
+* `apkg/<sanitized_title>.apkg`
 
 ---
 
 ## Notes
 
-* The summarization step includes retry logic for reliability. Failed chunks are retried up to three times.
-* Flashcards are formatted in HTML for better readability in Anki.
-* Adjust Gontserrat font paths in `anki_packager_tabbed.py` based on your system.
+* The summarization step includes **retry logic** for reliability. Failed chunks are retried up to three times.
+* Flashcards are **HTML-formatted** for enhanced readability in Anki.
+* Adjust **Gontserrat font paths** in `anki_packager_tabbed.py` based on your system.
 
 ---
 
 ## Customization
 
-* **Chunk size**: Modify `--words` argument in `reduce_transcript.py`.
+* **Chunk size**: Modify the `--words` argument in `reduce_transcript.py`.
 * **Summarization model**: Change `MODEL_NAME` in `llm.py`.
 * **Deck appearance**: Adjust CSS in `anki_packager_tabbed.py`.
 
@@ -114,10 +116,10 @@ This performs the following steps:
 
 ## To-Do
 
-- Add logging per video and pipeline stage.  
-- Capture YouTube titles for deck/file naming.  
-- Support full playlists, including large ones.  
-- Improve chunk retry and error handling.  
+* Add logging for each video and pipeline stage.
+* Support batch processing of playlists.
+* Enhance chunk retry and error handling.
+* Improve deck naming with auto-sanitized titles.
 
 ---
 
@@ -125,3 +127,4 @@ This performs the following steps:
 
 MIT License — free to use, modify, and distribute.
 
+---
