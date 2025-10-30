@@ -3,8 +3,14 @@
 pipeline.py
 -----------
 Flexible YouTube → Anki deck pipeline.
-Supports starting and ending at any step, automatically fetching/sanitizing titles,
-or using a manually provided title.
+Supports starting and ending at any step and automatically fetching/sanitizing titles.
+
+Steps:
+1 = Fetch transcript
+2 = Reduce transcript
+3 = Summarize chunks
+4 = Generate flashcards
+5 = Package Anki deck
 """
 
 import subprocess
@@ -12,7 +18,12 @@ from pathlib import Path
 import argparse
 import json
 import re
+import sys
 from urllib.parse import urlparse, parse_qs
+
+
+# Use the same Python interpreter currently running this script
+PYTHON = sys.executable
 
 
 def run_command(cmd_list):
@@ -23,7 +34,13 @@ def run_command(cmd_list):
 
 
 def extract_video_id(url_or_id: str) -> str:
-    """Extract YouTube video ID from URL or return it directly."""
+    """
+    Extract the YouTube video ID from a URL or return it directly if already an ID.
+    Supports formats:
+        - https://www.youtube.com/watch?v=VIDEO_ID
+        - https://youtu.be/VIDEO_ID
+        - VIDEO_ID directly
+    """
     if re.fullmatch(r'[a-zA-Z0-9_-]{11}', url_or_id):
         return url_or_id
 
@@ -39,33 +56,43 @@ def extract_video_id(url_or_id: str) -> str:
 
 
 def ensure_title(video_id: str, title_json: Path, scripts_dir: Path,
-                 manual_title: str | None = None, cookies: str | None = None) -> str:
+                 cookies: str | None = None, manual_title: str | None = None) -> str:
     """
-    Ensure we have a sanitized title.
-    - Use manual_title if provided
-    - Otherwise, fetch via youtubeTitle.py (optionally using cookies)
+    Ensure we have a sanitized title JSON file.
+    - If manual title is provided, save it directly.
+    - Otherwise, fetch via youtubeTitle.py (optionally with cookies).
     """
     if manual_title:
-        print(f"[i] Using manual title: {manual_title}")
-        cmd = ["python3", str(scripts_dir / "youtubeTitle.py"), video_id, "--title", manual_title]
-        run_command(cmd)
-    elif not title_json.exists():
-        print(f"[!] Title JSON not found, fetching via youtubeTitle.py...")
-        cmd = ["python3", str(scripts_dir / "youtubeTitle.py"), video_id]
-        if cookies:
-            cmd.extend(["--cookies", cookies])
-            print(f"[i] Using cookies file: {cookies}")
-        run_command(cmd)
+        print(f"[i] Using manually provided title: {manual_title}")
+        sanitized_title = re.sub(r'[\\/:"*?<>|]+', '', manual_title)
+        sanitized_title = re.sub(r'\s+', '_', sanitized_title)
+        data = {"videoID": video_id, "title": sanitized_title}
+        with open(title_json, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=4)
+        print(f"[+] Saved manual title to {title_json}")
+        return sanitized_title
+
+    if title_json.exists():
+        with open(title_json, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            title = data.get("title")
+        if not title:
+            raise ValueError(f"No 'title' field in {title_json}")
+        return title
+
+    print(f"[!] Title JSON not found, fetching via youtubeTitle.py...")
+    cmd = [PYTHON, str(scripts_dir / "youtubeTitle.py"), video_id]
+    if cookies:
+        cmd.extend(["--cookies", cookies])
+        print(f"[i] Using cookies file: {cookies}")
+    run_command(cmd)
 
     if not title_json.exists():
-        raise FileNotFoundError(f"{title_json} was not created.")
+        raise FileNotFoundError(f"youtubeTitle.py did not produce {title_json}")
 
     with open(title_json, "r", encoding="utf-8") as f:
         data = json.load(f)
         title = data.get("title")
-    if not title:
-        raise ValueError(f"No 'title' field found in {title_json}")
-
     return title
 
 
@@ -92,10 +119,9 @@ def main():
     parser.add_argument("video", help="YouTube video URL or ID to process")
     parser.add_argument("--title_json", default="currentTitle.json",
                         help="JSON file with sanitized title")
-    parser.add_argument("--title", default=None,
-                        help="Manually specify a title to save in JSON (skips fetching from YouTube)")
+    parser.add_argument("--title", help="Manually specify a title (bypasses youtubeTitle.py)")
     parser.add_argument("--cookies", "--cookies-file", dest="cookies", default=None,
-                        help="Path to cookies.txt file for authenticated yt-dlp requests (optional)")
+                        help="Path to a cookies.txt file for authenticated yt-dlp requests (optional)")
     parser.add_argument("--start_step", type=int, default=1, choices=range(1, 6),
                         help="Step number to start at (1–5)")
     parser.add_argument("--end_step", type=int, default=5, choices=range(1, 6),
@@ -113,8 +139,8 @@ def main():
     if start_step > end_step:
         raise ValueError(f"start_step ({start_step}) cannot be greater than end_step ({end_step})")
 
-    # Remove stale title JSON
-    if title_json.exists():
+    # Remove stale title JSON if no manual title is provided
+    if not manual_title and title_json.exists():
         print(f"[!] Removing old title JSON: {title_json}")
         title_json.unlink()
 
@@ -128,9 +154,9 @@ def main():
     # Ensure directories exist
     create_dirs(transcripts_dir, reduced_dir, summaries_dir, flashcards_dir, apkg_dir)
 
-    # Determine title
+    # Fetch or set sanitized title
     title = ensure_title(video_id, title_json, scripts_dir,
-                         manual_title=manual_title, cookies=cookies)
+                         cookies=cookies, manual_title=manual_title)
 
     transcript_file = transcripts_dir / f"{title}_transcript.json"
     reduced_file = reduced_dir / f"{title}_transcript_reduced.txt"
@@ -144,17 +170,19 @@ def main():
     # Step 1: Fetch transcript
     if start_step <= 1 <= end_step:
         cmd = [
-            "python3", str(scripts_dir / "fetch_transcript.py"),
+            PYTHON, str(scripts_dir / "fetch_transcript.py"),
             video_id,
             "--output_dir", str(transcripts_dir),
             "--title_json", str(title_json)
         ]
+        if cookies:
+            cmd.extend(["--cookies", cookies])
         run_command(cmd)
 
     # Step 2: Reduce transcript
     if start_step <= 2 <= end_step:
         run_command([
-            "python3", str(scripts_dir / "reduce_transcript.py"),
+            PYTHON, str(scripts_dir / "reduce_transcript.py"),
             str(transcript_file),
             "--outdir", str(reduced_dir)
         ])
@@ -162,7 +190,7 @@ def main():
     # Step 3: Summarize chunks
     if start_step <= 3 <= end_step:
         run_command([
-            "python3", str(scripts_dir / "llm.py"),
+            PYTHON, str(scripts_dir / "llm.py"),
             str(reduced_file),
             "--outdir", str(summaries_dir)
         ])
@@ -172,7 +200,7 @@ def main():
         if not full_summary_file.exists():
             raise FileNotFoundError(f"Full summary not found: {full_summary_file}")
         run_command([
-            "python3", str(scripts_dir / "summarize_flashcards_anki.py"),
+            PYTHON, str(scripts_dir / "summarize_flashcards_anki.py"),
             str(full_summary_file)
         ])
 
@@ -181,7 +209,7 @@ def main():
         if not flashcard_file.exists():
             raise FileNotFoundError(f"Flashcard file not found: {flashcard_file}")
         run_command([
-            "python3", str(scripts_dir / "anki_packager_tabbed.py"),
+            PYTHON, str(scripts_dir / "anki_packager_tabbed.py"),
             str(flashcard_file),
             "--title_json", str(title_json),
             "--outdir", str(apkg_dir)
