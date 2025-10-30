@@ -50,7 +50,7 @@ def extract_video_id(url_or_id: str) -> str:
     raise ValueError(f"Cannot extract YouTube video ID from '{url_or_id}'")
 
 
-def ensure_title(video_id: str, title_json: Path, scripts_dir: Path) -> str:
+def ensure_title(video_id: str, title_json: Path, scripts_dir: Path, cookies: str | None = None) -> str:
     """Ensure we have a sanitized title; fetch via youtubeTitle.py if missing."""
     if title_json.exists():
         with open(title_json, "r", encoding="utf-8") as f:
@@ -61,9 +61,15 @@ def ensure_title(video_id: str, title_json: Path, scripts_dir: Path) -> str:
         return title
     else:
         print(f"[!] Title JSON not found, fetching via youtubeTitle.py...")
-        run_command(["python3", str(scripts_dir / "youtubeTitle.py"), video_id])
+        cmd = ["python3", str(scripts_dir / "youtubeTitle.py"), video_id]
+        if cookies:
+            cmd.extend(["--cookies", cookies])
+            print(f"[i] Using cookies file: {cookies}")
+        run_command(cmd)
+
         if not title_json.exists():
             raise FileNotFoundError(f"youtubeTitle.py did not produce {title_json}")
+
         with open(title_json, "r", encoding="utf-8") as f:
             data = json.load(f)
             title = data.get("title")
@@ -89,18 +95,24 @@ def main():
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
+
     parser.add_argument("video", help="YouTube video URL or ID to process")
-    parser.add_argument("--title_json", default="currentTitle.json", help="JSON file with sanitized title")
+    parser.add_argument("--title_json", default="currentTitle.json",
+                        help="JSON file with sanitized title")
+    parser.add_argument("--cookies", "--cookies-file", dest="cookies", default=None,
+                        help="Path to a cookies.txt file for authenticated yt-dlp requests (optional)")
     parser.add_argument("--start_step", type=int, default=1, choices=range(1, 6),
                         help="Step number to start at (1–5)")
     parser.add_argument("--end_step", type=int, default=5, choices=range(1, 6),
                         help="Step number to end at (1–5)")
+
     args = parser.parse_args()
 
     video_id = extract_video_id(args.video)
     title_json = Path(args.title_json)
     start_step = args.start_step
     end_step = args.end_step
+    cookies = args.cookies
 
     if start_step > end_step:
         raise ValueError(f"start_step ({start_step}) cannot be greater than end_step ({end_step})")
@@ -121,7 +133,7 @@ def main():
     create_dirs(transcripts_dir, reduced_dir, summaries_dir, flashcards_dir, apkg_dir)
 
     # Fetch sanitized title
-    title = ensure_title(video_id, title_json, scripts_dir)
+    title = ensure_title(video_id, title_json, scripts_dir, cookies=cookies)
 
     transcript_file = transcripts_dir / f"{title}_transcript.json"
     reduced_file = reduced_dir / f"{title}_transcript_reduced.txt"
@@ -134,12 +146,15 @@ def main():
 
     # Step 1: Fetch transcript
     if start_step <= 1 <= end_step:
-        run_command([
+        cmd = [
             "python3", str(scripts_dir / "fetch_transcript.py"),
             video_id,
             "--output_dir", str(transcripts_dir),
             "--title_json", str(title_json)
-        ])
+        ]
+        if cookies:
+            cmd.extend(["--cookies", cookies])
+        run_command(cmd)
 
     # Step 2: Reduce transcript
     if start_step <= 2 <= end_step:

@@ -22,7 +22,7 @@ if not API_KEY:
     raise ValueError("MISTRAL_API_KEY not found in environment variables")
 
 client = Mistral(api_key=API_KEY)
-MODEL_NAME = "mistral-medium-latest"
+MODEL_NAME = "mistral-small-latest"
 
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds

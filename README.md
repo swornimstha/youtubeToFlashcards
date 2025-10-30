@@ -14,6 +14,7 @@ A complete pipeline to convert YouTube videos into structured Anki flashcards. T
 * **Anki Flashcard Generation**: Convert summaries into atomic question–answer flashcards.
 * **HTML Formatting**: Questions are bold and prominent; answers are lighter, centered, and styled with Gontserrat fonts and purple accents.
 * **Automatic Packaging**: Outputs a ready-to-import `.apkg` Anki deck.
+* **Optional Authenticated Downloads**: Supports YouTube cookies for age-restricted or region-locked videos.
 
 ---
 
@@ -74,15 +75,21 @@ Run the master pipeline:
 python pipeline.py <YOUTUBE_VIDEO_URL_OR_ID>
 ```
 
+**Optional**: Use a cookies file to access age-restricted or region-locked videos:
+
+```bash
+python pipeline.py <YOUTUBE_VIDEO_URL_OR_ID> --cookies /path/to/cookies.txt
+```
+
 **Example**:
 
 ```bash
-python pipeline.py https://www.youtube.com/watch?v=bqsXWmZHcFQ
+python pipeline.py https://www.youtube.com/watch?v=bqsXWmZHcFQ --cookies /content/cookies.txt
 ```
 
 This performs the following steps:
 
-1. Fetch the transcript.
+1. Fetch the transcript (uses cookies if provided).
 2. Reduce and chunk the transcript for summarization.
 3. Summarize each chunk.
 4. Generate Anki-ready flashcards.
@@ -103,6 +110,7 @@ This performs the following steps:
 * The summarization step includes **retry logic** for reliability. Failed chunks are retried up to three times.
 * Flashcards are **HTML-formatted** for enhanced readability in Anki.
 * Adjust **Gontserrat font paths** in `anki_packager_tabbed.py` based on your system.
+* **Cookies are optional** — the pipeline runs normally without them. Only required for videos that require authentication or are region-restricted.
 
 ---
 
@@ -119,6 +127,7 @@ This performs the following steps:
 * Add logging for each video and pipeline stage.
 * Support batch processing of playlists.
 * Make proper UI
+
 ---
 
 ## License
@@ -126,3 +135,4 @@ This performs the following steps:
 MIT License — free to use, modify, and distribute.
 
 ---
+
