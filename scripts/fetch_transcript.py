@@ -48,6 +48,9 @@ def main():
                         help="Preferred language(s), e.g., en fr es (default: en)")
     parser.add_argument("--title_json", default="currentTitle.json",
                         help="Path to JSON containing sanitized title")
+    parser.add_argument("--cookies", "--cookies-file", dest="cookies", default=None,
+                        help="Optional cookies file (pipeline compatibility; not used by this script)")
+
     args = parser.parse_args()
 
     fetch_transcript(args.video_id, Path(args.output_dir), Path(args.title_json), args.lang)
