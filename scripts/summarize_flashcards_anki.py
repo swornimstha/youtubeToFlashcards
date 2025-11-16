@@ -1,82 +1,175 @@
 #!/usr/bin/env python3
 """
-summarize_flashcards_anki.py
-----------------------------
-Generates atomic Anki flashcards from lecture text using Mistral,
-preserves details and bold/italic formatting, and deduplicates repeated cards.
-Saves output under flashcardTxt/<sanitized_title>.txt
+summarize_flashcards_anki.py (Google Gemini + Mistral selectable, updated for latest SDK)
+------------------------------------------------------------------
+Generates atomic Anki flashcards from lecture text.
+Default provider: Google.
 """
 
 import os
 import time
 import json
+import random
 from pathlib import Path
 from dotenv import load_dotenv
-from mistralai import Mistral
-from mistralai.models.sdkerror import SDKError
+from typing import Literal
 
-# Load environment variables
+# Providers
+try:
+    import google.generativeai as genai
+    from google.generativeai.types import HarmCategory, HarmBlockThreshold
+except ImportError:
+    genai = None
+    HarmCategory = None
+    HarmBlockThreshold = None
+
+try:
+    from mistralai.client import MistralClient as Mistral
+    from mistralai.models.chat_completion import ChatMessage
+    from mistralai.models.sdkerror import SDKError
+except ImportError:
+    Mistral = None
+    ChatMessage = None
+    SDKError = Exception
+
+# ---------------------------------------------------------------
 load_dotenv()
-API_KEY = os.getenv("MISTRAL_API_KEY")
-if not API_KEY:
-    raise ValueError("MISTRAL_API_KEY not found in environment variables")
 
-MODEL = "mistral-large-latest"
-client = Mistral(api_key=API_KEY)
+DEFAULT_PROVIDER: Literal["google", "mistral"] = "google"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 
-def call_mistral_with_retry(prompt, max_retries=5, base_delay=5):
-    """Call Mistral API with linear backoff for rate limits."""
+if not GOOGLE_API_KEY and not MISTRAL_API_KEY:
+    raise ValueError("No GOOGLE_API_KEY or MISTRAL_API_KEY found.")
+
+# ---------------------------------------------------------------
+# Provider initialization
+# ---------------------------------------------------------------
+
+def init_google():
+    if not genai:
+        raise ImportError("google-generativeai not installed. Install with: pip install google-generativeai")
+    if not GOOGLE_API_KEY:
+        raise ValueError("GOOGLE_API_KEY missing.")
+    genai.configure(api_key=GOOGLE_API_KEY)
+    # Using 'gemini-1.5-pro' for better quality when not constrained by high volume.
+    # It's generally available on the free tier, though rate limits might be stricter than flash.
+    model = genai.GenerativeModel(
+        'gemini-2.5-pro',
+        # Optional: Configure safety settings to potentially reduce blocks,
+        # but be aware of the content you are processing.
+        safety_settings={
+            HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+        }
+    )
+    return model
+
+
+def init_mistral():
+    if not Mistral:
+        raise ImportError("mistralai not installed.")
+    if not MISTRAL_API_KEY:
+        raise ValueError("MISTRAL_API_KEY missing.")
+    return Mistral(api_key=MISTRAL_API_KEY), "mistral-large-latest"
+
+# ---------------------------------------------------------------
+# Retry wrapper with rate-limit handling
+# ---------------------------------------------------------------
+
+def call_llm_with_retry(prompt, provider, max_retries=5, base_delay=5):
     for attempt in range(1, max_retries + 1):
         try:
-            response = client.chat.complete(
-                model=MODEL,
-                messages=[{"role": "user", "content": prompt}]
-            )
-            return response.choices[0].message.content.strip()
-        except SDKError as e:
-            if "429" in str(e):
+            if provider == "google":
+                model = init_google()
+                response = model.generate_content(prompt)
+                # Check for content filtering or empty responses
+                if not response.candidates:
+                    raise RuntimeError(f"Google API returned no candidates. Prompt may have been blocked or empty.")
+                if response.candidates[0].finish_reason != genai.types.HarmCategory.HARM_CATEGORY_UNSPECIFIED: # Changed from "STOP"
+                    print(f"[!] Warning: Google API finished with reason: {response.candidates[0].finish_reason}")
+                return response.text.strip()
+
+            elif provider == "mistral":
+                if ChatMessage is None:
+                    raise ImportError("mistralai.models.chat_completion.ChatMessage not found. Ensure mistralai package is up to date.")
+                client, model_name = init_mistral()
+                messages = [ChatMessage(role="user", content=prompt)]
+                response = client.chat(model=model_name, messages=messages)
+                return response.choices[0].message.content.strip()
+
+            else:
+                raise ValueError(f"Unknown provider: {provider}")
+
+        except Exception as e:
+            is_rate_limit = False
+            # Specific handling for Google API rate limits and content blocks
+            if provider == "google":
+                if "ResourceExhausted" in str(e): # Google rate limit
+                    is_rate_limit = True
+                elif "StopCandidateException" in str(e) or "BlockedPromptException" in str(e):
+                    # These exceptions indicate content policy violations, not a transient error.
+                    # Retrying won't help, so re-raise immediately.
+                    print(f"[!] Google API content policy violation: {e}")
+                    raise RuntimeError(f"Google API content policy violation: {e}")
+            # General HTTP 429 for Mistral or other providers
+            elif isinstance(e, SDKError) and "429" in str(e):
+                is_rate_limit = True
+
+            if is_rate_limit:
+                wait_time = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
+                print(f"[!] Rate limit hit. Waiting {wait_time:.1f}s before retry (attempt {attempt}/{max_retries})")
+                time.sleep(wait_time)
+            elif attempt < max_retries:
                 wait_time = base_delay * attempt
-                print(f"[!] Rate limit hit. Waiting {wait_time}s before retry (attempt {attempt}/{max_retries})...")
+                print(f"[!] Error encountered, retrying in {wait_time}s (attempt {attempt}/{max_retries}): {e}")
                 time.sleep(wait_time)
             else:
-                raise e
-    raise RuntimeError("Exceeded maximum retries due to repeated rate-limit errors.")
+                raise RuntimeError(f"Maximum retries exceeded: {e}")
+
+# ---------------------------------------------------------------
+# Utilities
+# ---------------------------------------------------------------
 
 def load_sanitized_title(title_json: Path) -> str:
-    """Load sanitized YouTube title from JSON file."""
     if not title_json.exists():
         raise FileNotFoundError(f"Title JSON file not found: {title_json}")
-    with open(title_json, "r", encoding="utf-8") as f:
+    with open(title_json, 'r', encoding='utf-8') as f:
         data = json.load(f)
     title = data.get("title")
     if not title:
         raise ValueError(f"No 'title' field found in {title_json}")
     return title
 
+
 def determine_output_path(output_dir: Path, title: str) -> Path:
-    """Determine output path for flashcard text file using sanitized title."""
     output_dir.mkdir(parents=True, exist_ok=True)
     return output_dir / f"{title}.txt"
 
-def deduplicate_flashcards(raw_flashcards: str) -> str:
-    """Remove duplicate flashcards while preserving order."""
+
+def deduplicate_flashcards(raw: str) -> str:
     seen = set()
-    deduped_lines = []
-    for line in raw_flashcards.splitlines():
-        normalized = line.strip()
-        if normalized and normalized not in seen:
-            deduped_lines.append(line)
-            seen.add(normalized)
-    return "\n".join(deduped_lines)
+    out_lines = []
+    for line in raw.splitlines():
+        norm = line.strip()
+        if norm and norm not in seen:
+            out_lines.append(line)
+            seen.add(norm)
+    return "\n".join(out_lines)
+
+# ---------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="Generate atomic Anki flashcards from text using Mistral.")
-    parser.add_argument("input_file", help="Path to input text file")
-    parser.add_argument("--title_json", default="currentTitle.json",
-                        help="Path to JSON containing sanitized title")
-    parser.add_argument("--outdir", default="flashcardTxt",
-                        help="Directory to save flashcard text files")
+    parser = argparse.ArgumentParser(description="Generate atomic Anki flashcards using Google or Mistral.")
+    parser.add_argument("input_file")
+    parser.add_argument("--title_json", default="currentTitle.json")
+    parser.add_argument("--outdir", default="flashcardTxt")
+    parser.add_argument("--provider", choices=["google", "mistral"], default=DEFAULT_PROVIDER)
     args = parser.parse_args()
 
     input_path = Path(args.input_file)
@@ -89,40 +182,36 @@ def main():
         raise ValueError(f"{input_path} is empty")
 
     delimiter = "||DELIM||"
+
     prompt = f"""
 You are an expert at creating high-quality Anki flashcards from lecture notes.
 
 - Generate flashcards strictly in this format:
   Question{delimiter}Answer
 - Use exactly '{delimiter}' between question and answer.
-- Each flashcard must test only one fact, concept, or relationship (atomic fact). Do not combine multiple facts in one card.
+- Each flashcard must test only one fact, concept, or relationship (atomic fact).
 - Include all essential information from the text, without omissions.
-- Always include the full name of any Greek person mentioned when referring to them.
-- Avoid redundancy, trivial details, commentary, examples, explanations, or introductions.
-- Do NOT use 'Q:' or 'A:' prefixes, extra characters, or punctuation beyond natural usage.
-- Each flashcard must be a single line: the question, immediately followed by '{delimiter}', then the answer.
-- Do NOT insert bullet points, numbering, or line breaks within the question or answer.
-- Answers should be concise, fully self-contained, and understandable without external context.
-- For important terms, names, or concepts, wrap them in HTML <b>bold</b> tags; for definitions or emphasized phrases, use <i>italics</i>.
-- Prefer short, high-impact sentences; split overly long answers into multiple atomic cards if needed.
-- Merge similar facts into a single card where appropriate; avoid generating duplicates.
-- Clarify pronouns or vague references; always specify who or what is being referred to.
-- Output ONLY flashcards, one per line, no extra text, no headers, separators, or commentary.
-- Use high-school-level vocabulary.
-- Emphasize on having a question and answer instead of two statements
+- Always include the full name of any Greek person mentioned.
+- Avoid redundancy, trivial details, commentary, or explanations.
+- No prefixes like 'Q:' or 'A:'.
+- Each flashcard must be a single line.
+- Use <b>bold</b> for key terms and <i>italics</i> for definitions.
+- Avoid duplicates; split overly long answers.
+- Clarify pronouns.
+- Output ONLY flashcards.
 Text to process:
 {text}
 """
-    print(f"[+] Generating flashcard content from {input_path.name}...")
-    raw_flashcards = call_mistral_with_retry(prompt)
 
-    deduped_flashcards = deduplicate_flashcards(raw_flashcards)
+    print(f"[+] Generating flashcards using {args.provider}...")
+    raw_cards = call_llm_with_retry(prompt, provider=args.provider)
+    deduped = deduplicate_flashcards(raw_cards)
 
-    # Save the deduplicated flashcards
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write(deduped_flashcards)
+        f.write(deduped)
 
-    print(f"[+] Deduplicated flashcard content saved to {output_path}")
+    print(f"[+] Saved to {output_path}")
+
 
 if __name__ == "__main__":
     main()
