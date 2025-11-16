@@ -52,7 +52,7 @@ def init_google():
     genai.configure(api_key=GOOGLE_API_KEY)
     # The genai.GenerativeModel is now the primary way to interact with models.
     # No need for genai.Client() anymore.
-    model = genai.GenerativeModel('gemini-2.5-flash') # Using gemini-1.5-flash as a more recent, faster model
+    model = genai.GenerativeModel('gemini-2.5-flash-lite') # Using gemini-1.5-flash as a more recent, faster model
     return model
 
 

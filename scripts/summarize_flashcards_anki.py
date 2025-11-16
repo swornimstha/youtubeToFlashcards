@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-summarize_flashcards_anki.py (Google Gemini + Mistral selectable, updated for latest SDK)
+summarize_flashcards_anki.py (Google Gemini + Mistral selectable)
 ------------------------------------------------------------------
 Generates atomic Anki flashcards from lecture text.
 Default provider: Google.
+Supports playlist subfolders.
 """
 
 import os
@@ -32,7 +33,6 @@ except ImportError:
     ChatMessage = None
     SDKError = Exception
 
-# ---------------------------------------------------------------
 load_dotenv()
 
 DEFAULT_PROVIDER: Literal["google", "mistral"] = "google"
@@ -49,15 +49,9 @@ if not GOOGLE_API_KEY and not MISTRAL_API_KEY:
 def init_google():
     if not genai:
         raise ImportError("google-generativeai not installed. Install with: pip install google-generativeai")
-    if not GOOGLE_API_KEY:
-        raise ValueError("GOOGLE_API_KEY missing.")
     genai.configure(api_key=GOOGLE_API_KEY)
-    # Using 'gemini-1.5-pro' for better quality when not constrained by high volume.
-    # It's generally available on the free tier, though rate limits might be stricter than flash.
     model = genai.GenerativeModel(
-        'gemini-2.5-pro',
-        # Optional: Configure safety settings to potentially reduce blocks,
-        # but be aware of the content you are processing.
+        "gemini-2.5-flash",
         safety_settings={
             HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
             HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
@@ -67,16 +61,13 @@ def init_google():
     )
     return model
 
-
 def init_mistral():
     if not Mistral:
         raise ImportError("mistralai not installed.")
-    if not MISTRAL_API_KEY:
-        raise ValueError("MISTRAL_API_KEY missing.")
     return Mistral(api_key=MISTRAL_API_KEY), "mistral-large-latest"
 
 # ---------------------------------------------------------------
-# Retry wrapper with rate-limit handling
+# Retry wrapper
 # ---------------------------------------------------------------
 
 def call_llm_with_retry(prompt, provider, max_retries=5, base_delay=5):
@@ -85,48 +76,21 @@ def call_llm_with_retry(prompt, provider, max_retries=5, base_delay=5):
             if provider == "google":
                 model = init_google()
                 response = model.generate_content(prompt)
-                # Check for content filtering or empty responses
                 if not response.candidates:
-                    raise RuntimeError(f"Google API returned no candidates. Prompt may have been blocked or empty.")
-                if response.candidates[0].finish_reason != genai.types.HarmCategory.HARM_CATEGORY_UNSPECIFIED: # Changed from "STOP"
-                    print(f"[!] Warning: Google API finished with reason: {response.candidates[0].finish_reason}")
+                    raise RuntimeError("Google API returned no candidates")
                 return response.text.strip()
-
             elif provider == "mistral":
-                if ChatMessage is None:
-                    raise ImportError("mistralai.models.chat_completion.ChatMessage not found. Ensure mistralai package is up to date.")
                 client, model_name = init_mistral()
                 messages = [ChatMessage(role="user", content=prompt)]
                 response = client.chat(model=model_name, messages=messages)
                 return response.choices[0].message.content.strip()
-
             else:
                 raise ValueError(f"Unknown provider: {provider}")
-
         except Exception as e:
-            is_rate_limit = False
-            # Specific handling for Google API rate limits and content blocks
-            if provider == "google":
-                if "ResourceExhausted" in str(e): # Google rate limit
-                    is_rate_limit = True
-                elif "StopCandidateException" in str(e) or "BlockedPromptException" in str(e):
-                    # These exceptions indicate content policy violations, not a transient error.
-                    # Retrying won't help, so re-raise immediately.
-                    print(f"[!] Google API content policy violation: {e}")
-                    raise RuntimeError(f"Google API content policy violation: {e}")
-            # General HTTP 429 for Mistral or other providers
-            elif isinstance(e, SDKError) and "429" in str(e):
-                is_rate_limit = True
-
-            if is_rate_limit:
-                wait_time = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
-                print(f"[!] Rate limit hit. Waiting {wait_time:.1f}s before retry (attempt {attempt}/{max_retries})")
-                time.sleep(wait_time)
-            elif attempt < max_retries:
-                wait_time = base_delay * attempt
-                print(f"[!] Error encountered, retrying in {wait_time}s (attempt {attempt}/{max_retries}): {e}")
-                time.sleep(wait_time)
-            else:
+            wait_time = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
+            print(f"[!] Attempt {attempt} failed: {e}. Retrying in {wait_time:.1f}s")
+            time.sleep(wait_time)
+            if attempt == max_retries:
                 raise RuntimeError(f"Maximum retries exceeded: {e}")
 
 # ---------------------------------------------------------------
@@ -136,18 +100,18 @@ def call_llm_with_retry(prompt, provider, max_retries=5, base_delay=5):
 def load_sanitized_title(title_json: Path) -> str:
     if not title_json.exists():
         raise FileNotFoundError(f"Title JSON file not found: {title_json}")
-    with open(title_json, 'r', encoding='utf-8') as f:
+    with open(title_json, "r", encoding="utf-8") as f:
         data = json.load(f)
     title = data.get("title")
     if not title:
-        raise ValueError(f"No 'title' field found in {title_json}")
+        raise ValueError(f"No 'title' field in {title_json}")
     return title
 
-
-def determine_output_path(output_dir: Path, title: str) -> Path:
+def determine_output_path(output_dir: Path, title: str, playlist_folder: str | None = None) -> Path:
+    if playlist_folder:
+        output_dir = output_dir / playlist_folder
     output_dir.mkdir(parents=True, exist_ok=True)
     return output_dir / f"{title}.txt"
-
 
 def deduplicate_flashcards(raw: str) -> str:
     seen = set()
@@ -170,11 +134,12 @@ def main():
     parser.add_argument("--title_json", default="currentTitle.json")
     parser.add_argument("--outdir", default="flashcardTxt")
     parser.add_argument("--provider", choices=["google", "mistral"], default=DEFAULT_PROVIDER)
+    parser.add_argument("--playlist_folder", default=None, help="Optional playlist folder name")
     args = parser.parse_args()
 
     input_path = Path(args.input_file)
     title = load_sanitized_title(Path(args.title_json))
-    output_path = determine_output_path(Path(args.outdir), title)
+    output_path = determine_output_path(Path(args.outdir), title, args.playlist_folder)
 
     with open(input_path, "r", encoding="utf-8") as f:
         text = f.read().strip()
@@ -182,7 +147,6 @@ def main():
         raise ValueError(f"{input_path} is empty")
 
     delimiter = "||DELIM||"
-
     prompt = f"""
 You are an expert at creating high-quality Anki flashcards from lecture notes.
 
@@ -211,7 +175,6 @@ Text to process:
         f.write(deduped)
 
     print(f"[+] Saved to {output_path}")
-
 
 if __name__ == "__main__":
     main()
