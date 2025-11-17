@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
 """
+YouTube Title Fetcher
 youtubeTitle.py
-----------------
-Fetches the YouTube video title, sanitizes it for filenames, and saves it in currentTitle.json.
-Supports optional cookies and manual title entry.
+---------------------
+
+Retrieves a video's title via yt-dlp, sanitizes it for filesystem safety,
+and stores both the video ID and cleaned title in `currentTitle.json`.
+
+Features:
+    • Robust title extraction using yt-dlp
+    • Optional cookies for authenticated or region-locked videos
+    • Optional manual title override
+    • Filename-safe title normalization
 
 Usage:
-    python youtubeTitle.py <YOUTUBE_VIDEO_ID> [--cookies <COOKIES_FILE>] [--title <MANUAL_TITLE>]
+    python youtubeTitle.py <VIDEO_ID>
+    python youtubeTitle.py <VIDEO_ID> --cookies cookies.txt
+    python youtubeTitle.py <VIDEO_ID> --title "Custom Name"
 """
 
 import sys
@@ -18,78 +28,67 @@ import yt_dlp
 
 
 def sanitize_filename(name: str) -> str:
-    """
-    Sanitize a string to be safe for filenames:
-    - Remove invalid filename characters: \ / : * ? " < > |
-    - Replace spaces with underscores
-    """
-    name = re.sub(r'[\\/:"*?<>|]+', '', name)
-    name = re.sub(r'\s+', '_', name)
+    """Remove illegal filename characters and collapse spaces into underscores."""
+    name = re.sub(r'[\\/:*?"<>|]+', "", name)
+    name = re.sub(r"\s+", "_", name)
     return name
 
 
 def fetch_video_title(video_id: str, cookies: str | None = None) -> str:
-    """Fetch and sanitize YouTube video title using yt-dlp."""
+    """Fetch a YouTube video title using yt-dlp and return a sanitized version."""
     video_url = f"https://www.youtube.com/watch?v={video_id}"
-    ydl_opts = {'quiet': True}
+    ydl_opts = {"quiet": True}
+
     if cookies:
-        ydl_opts['cookiefile'] = cookies
-        print(f"[i] Using cookies from: {cookies}")
+        ydl_opts["cookiefile"] = cookies
+        print(f"[i] Using cookies: {cookies}")
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info_dict = ydl.extract_info(video_url, download=False)
-            title = info_dict.get('title')
+            info = ydl.extract_info(video_url, download=False)
+            title = info.get("title")
     except yt_dlp.utils.DownloadError as e:
-        print(f"[!] Download error: {e}")
+        print(f"[!] yt-dlp error: {e}")
         sys.exit(1)
     except Exception as e:
         print(f"[!] Unexpected error: {e}")
         sys.exit(1)
 
     if not title:
-        print("[!] Could not retrieve video title.")
+        print("[!] Could not retrieve YouTube title.")
         sys.exit(1)
 
     return sanitize_filename(title)
 
 
 def save_to_json(video_id: str, title: str, file_path: Path = Path("currentTitle.json")):
-    """Save video ID and sanitized title to JSON."""
-    data = {
-        "videoID": video_id,
-        "title": title
-    }
+    """Write the video ID and sanitized title into currentTitle.json."""
     try:
         with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
-        print(f"[+] Saved video ID and title to {file_path}")
+            json.dump({"videoID": video_id, "title": title}, f, indent=4, ensure_ascii=False)
+        print(f"[+] Saved: {file_path}")
     except Exception as e:
-        print(f"[!] Failed to save JSON: {e}")
+        print(f"[!] Failed to write JSON: {e}")
         sys.exit(1)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Fetch and sanitize YouTube video title, optionally using cookies or manual title."
-    )
+    parser = argparse.ArgumentParser(description="Fetch and sanitize a YouTube video title.")
     parser.add_argument("video_id", help="YouTube video ID")
-    parser.add_argument("--cookies", "--cookies-file", dest="cookies", default=None,
-                        help="Path to cookies.txt file for yt-dlp (optional)")
+    parser.add_argument("--cookies", dest="cookies", default=None,
+                        help="Optional path to cookies.txt for yt-dlp")
     parser.add_argument("--title", dest="manual_title", default=None,
-                        help="Manually specify a title to save in JSON (skips fetching from YouTube)")
+                        help="Manually specify a title (skips YouTube lookup)")
     args = parser.parse_args()
 
     video_id = args.video_id
-    cookies = args.cookies
-    manual_title = args.manual_title
 
-    if manual_title:
-        title = sanitize_filename(manual_title)
+    if args.manual_title:
+        title = sanitize_filename(args.manual_title)
         print(f"[i] Using manual title: {title}")
     else:
-        title = fetch_video_title(video_id, cookies=cookies)
-        print(f"[+] Fetched and sanitized title: {title}")
+        title = fetch_video_title(video_id, cookies=args.cookies)
+        print(f"[+] Retrieved title: {title}")
 
     save_to_json(video_id, title)
 

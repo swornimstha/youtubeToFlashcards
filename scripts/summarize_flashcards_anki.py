@@ -51,7 +51,7 @@ def init_google():
         raise ImportError("google-generativeai not installed. Install with: pip install google-generativeai")
     genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel(
-        "gemini-2.5-flash",
+        "gemini-2.5-pro",
         safety_settings={
             HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
             HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
@@ -163,6 +163,8 @@ You are an expert at creating high-quality Anki flashcards from lecture notes.
 - Avoid duplicates; split overly long answers.
 - Clarify pronouns.
 - Output ONLY flashcards.
+- Skip any unnecessary information about the course like the instructor and course materials
+- Skip sponsored segments and self-promotion of the channel and creator
 Text to process:
 {text}
 """
