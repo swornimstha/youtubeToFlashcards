@@ -1,3 +1,32 @@
+# --- Python Artifacts ---
+__pycache__/
+*.py[cod]
+.venv/
+
+# --- Environment & Secrets ---
+.env
+currentTitle.json
+
+# --- Pipeline Data (Generated Outputs) ---
+# Keep these ignored if you only want to save the "scripts" to Git.
+# If you want to save your decks to GitHub, comment these out.
+apkg/
+flashcardTxt/
+reduced/
+summaries/
+transcripts/
+
+# --- Smart Cache & Logs ---
+# These are local to your machine and change every run.
+video_cache.json
+pipeline.log
+*.log
+
+# --- System/Editor ---
+.DS_Store
+.vscode/
+.idea/
+
 # Python artifacts
 __pycache__/
 *.py[cod]
@@ -43,3 +72,6 @@ desktop.ini
 
 # Ignore examples if you want to track only source code
 # examples/
+video_cache.json
+pipeline.log
+

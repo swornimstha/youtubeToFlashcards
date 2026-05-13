@@ -32,7 +32,7 @@ def clean_text(text: str) -> str:
 def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> List[str]:
     """Merge short caption segments into paragraphs."""
     merged, buffer = [], []
-    last_start = None
+    last_end = None
 
     for entry in transcript:
         segment = clean_text(entry.get("text", ""))
@@ -40,12 +40,15 @@ def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> Li
             continue
 
         start = float(entry.get("start", 0))
-        if last_start is not None and start - last_start > max_gap:
+        duration = float(entry.get("duration", 0))
+        
+        # Calculate gap based on the END of the last subtitle, not the start
+        if last_end is not None and (start - last_end) > max_gap:
             merged.append(" ".join(buffer))
             buffer = []
 
         buffer.append(segment)
-        last_start = start
+        last_end = start + duration
 
     if buffer:
         merged.append(" ".join(buffer))
@@ -92,19 +95,14 @@ def main():
     parser.add_argument("input_json", help="Path to transcript JSON file")
     parser.add_argument("--words", type=int, default=600, help="Approximate words per chunk")
     parser.add_argument("--outdir", default="reduced", help="Directory to save reduced text files")
-    parser.add_argument("--title_json", default="currentTitle.json",
-                        help="Path to JSON containing sanitized title")
     args = parser.parse_args()
 
     input_path = Path(args.input_json)
     out_dir = Path(args.outdir)
 
-    # Read sanitized title from JSON
-    with open(args.title_json, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        title = data.get("title")
-    if not title:
-        raise ValueError(f"No title found in {args.title_json}")
+    # Automatically extract the title from the input filename 
+    # (e.g., 'Video_Title_transcript.json' -> 'Video_Title')
+    title = input_path.stem.replace("_transcript", "")
 
     transcript = load_transcript(input_path)
     paragraphs = merge_segments(transcript)
