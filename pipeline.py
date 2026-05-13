@@ -5,6 +5,7 @@ YouTube-to-Anki Pipeline
 ------------------------
 Converts YouTube videos or playlists into structured Anki decks.
 Includes Smart Caching, File-Existence Auto-Resume, and File Logging.
+Now with Empty-Transcript protection to prevent domino failures.
 """
 
 import subprocess
@@ -19,7 +20,6 @@ import logging
 PYTHON = sys.executable
 
 # --- 1. Setup Logging ---
-# This logs to BOTH the terminal and a permanent 'pipeline.log' file
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -109,7 +109,6 @@ def main():
     cookies = args.cookies
     video_cache = load_cache()
 
-    # --- Determine videos to process ---
     if args.video:
         video_ids = [extract_video_id(args.video)]
         playlist_folder = None
@@ -126,19 +125,17 @@ def main():
     dirs = {k: (v / playlist_folder if playlist_folder else v) for k, v in base.items()}
     mkdirs(*dirs.values())
 
-    # --- Process each video ---
     decks_for_playlist = []
     for vid in video_ids:
         log_info(f"\n{'='*40}\nProcessing Video ID: {vid}\n{'='*40}")
         try:
             # ---------------------------------------------------------
-            # STEP 1: Fetch Transcript (With Caching & Resume)
+            # STEP 1: Fetch Transcript
             # ---------------------------------------------------------
             title = video_cache.get(vid)
             
             if title and (dirs["transcripts"] / f"{title}_transcript.json").exists():
                 log_info(f"[SKIP] Step 1: Transcript for '{title}' already exists.")
-                # We still need to write the currentTitle.json so later scripts don't crash
                 with open(title_json, "w", encoding="utf-8") as f:
                     json.dump({"videoID": vid, "title": title}, f, indent=4)
             else:
@@ -155,21 +152,17 @@ def main():
                     
                     run_command(cmd)
 
-                    # Update Cache with the newly fetched title
                     if title_json.exists():
                         with open(title_json, "r", encoding="utf-8") as f:
                             title = json.load(f)["title"]
                             video_cache[vid] = title
                             save_cache(video_cache)
-                else:
-                    log_info("[!] Step 1 skipped by arguments, but no cached file exists. This may cause errors downstream.")
 
-            # If title is still completely unknown, we must skip this video
             if not title:
                 log_error(f"[!] Could not determine title for {vid}. Skipping.")
                 continue
 
-            # Define Expected File Paths
+            # Define Paths
             transcript = dirs["transcripts"] / f"{title}_transcript.json"
             reduced = dirs["reduced"] / f"{title}_transcript_reduced.txt"
             summary_dir = dirs["summaries"] / title
@@ -178,6 +171,14 @@ def main():
             apkg_file = dirs["apkg"] / f"{title}.apkg"
             
             mkdirs(summary_dir)
+
+            # --- Validation 1: Check if Transcript is empty before proceeding ---
+            if transcript.exists():
+                with open(transcript, 'r') as f:
+                    content = json.load(f)
+                    if not content:
+                        log_error(f"[!] Transcript for '{title}' is empty. YouTube may have blocked subs. Skipping video.")
+                        continue
 
             # ---------------------------------------------------------
             # STEP 2: Reduce Transcript
@@ -191,6 +192,11 @@ def main():
                         PYTHON, str(scripts / "reduce_transcript.py"),
                         str(transcript), "--outdir", str(dirs["reduced"])
                     ])
+
+            # --- Validation 2: Check if Reduction worked ---
+            if not reduced.exists() or reduced.stat().st_size < 10:
+                log_error(f"[!] Reduced file for '{title}' is empty/missing. No content to summarize. Skipping video.")
+                continue
 
             # ---------------------------------------------------------
             # STEP 3: Summarize with LLM
@@ -211,6 +217,8 @@ def main():
             if args.start_step <= 4 <= args.end_step:
                 if flashcards.exists():
                     log_info(f"[SKIP] Step 4: Flashcards already exist for '{title}'.")
+                elif not full_summary.exists():
+                    log_error(f"[!] full_summary.txt missing for '{title}'. Skipping Step 4.")
                 else:
                     log_info("[RUN] Step 4: Formatting Anki flashcards...")
                     run_command([
@@ -226,6 +234,8 @@ def main():
             if args.start_step <= 5 <= args.end_step:
                 if apkg_file.exists():
                     log_info(f"[SKIP] Step 5: .apkg deck already exists for '{title}'.")
+                elif not flashcards.exists():
+                    log_error(f"[!] Flashcard file missing for '{title}'. Skipping Step 5.")
                 else:
                     log_info("[RUN] Step 5: Packaging Anki deck...")
                     run_command([
@@ -235,7 +245,7 @@ def main():
                         "--outdir", str(dirs["apkg"])
                     ])
 
-            if not single_video_mode:
+            if not single_video_mode and flashcards.exists():
                 decks_for_playlist.append((flashcards, title))
 
         except subprocess.CalledProcessError as e:
@@ -252,13 +262,19 @@ def main():
             log_info(f"[SKIP] Combined master deck '{playlist_folder}.apkg' already exists.")
         else:
             cmd = [PYTHON, str(scripts / "anki_packager_tabbed.py")]
+            valid_decks = 0
             for fc_file, t_name in decks_for_playlist:
                 if fc_file.exists():
                     cmd += ["--input_file", str(fc_file), "--subdeck_title", t_name]
-            cmd += ["--outdir", str(dirs["apkg"]), "--playlist_name", playlist_folder]
-            run_command(cmd)
+                    valid_decks += 1
+            
+            if valid_decks > 0:
+                cmd += ["--outdir", str(dirs["apkg"]), "--playlist_name", playlist_folder]
+                run_command(cmd)
+            else:
+                log_error("[!] No valid flashcard files found to build master deck.")
 
-    log_info("\n[+] Pipeline Completed Successfully.")
+    log_info("\n[+] Pipeline Completed.")
 
 if __name__ == "__main__":
     main()

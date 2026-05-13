@@ -1,36 +1,21 @@
 #!/usr/bin/env python3
-"""
-reduce_transcript.py
---------------------
-Preprocess and condense a YouTube transcript JSON file into coherent,
-LLM-ready text chunks for summarization and flashcard generation.
-
-Output: reduced/<sanitized_title>_transcript_reduced.txt
-"""
-
 import json
 import re
 import textwrap
 from pathlib import Path
 from typing import List, Dict, Any
 
-
 def load_transcript(path: Path) -> List[Dict[str, Any]]:
-    """Load transcript JSON file."""
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data
 
-
 def clean_text(text: str) -> str:
-    """Remove filler artifacts and normalize whitespace."""
-    text = re.sub(r"\[.*?\]", "", text)  # remove [music], [applause], etc.
+    text = re.sub(r"\[.*?\]", "", text)  # remove [music], etc.
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
-
 def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> List[str]:
-    """Merge short caption segments into paragraphs."""
     merged, buffer = [], []
     last_end = None
 
@@ -42,7 +27,6 @@ def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> Li
         start = float(entry.get("start", 0))
         duration = float(entry.get("duration", 0))
         
-        # Calculate gap based on the END of the last subtitle, not the start
         if last_end is not None and (start - last_end) > max_gap:
             merged.append(" ".join(buffer))
             buffer = []
@@ -54,16 +38,21 @@ def merge_segments(transcript: List[Dict[str, Any]], max_gap: float = 3.0) -> Li
         merged.append(" ".join(buffer))
     return merged
 
-
-def chunk_text(paragraphs: List[str], max_words: int = 600) -> List[str]:
-    """Group paragraphs into chunks of roughly `max_words`."""
+def chunk_text(paragraphs: List[str], max_words: int = 3000, overlap_paras: int = 2) -> List[str]:
+    """
+    Groups paragraphs into chunks. 
+    When a chunk is full, it starts the next one using the last `overlap_paras` 
+    from the previous chunk to maintain context.
+    """
     chunks, current, count = [], [], 0
 
     for para in paragraphs:
         words = para.split()
         if count + len(words) > max_words and current:
             chunks.append(" ".join(current))
-            current, count = [], 0
+            # Start next chunk with the tail of the previous one
+            current = current[-overlap_paras:] if len(current) > overlap_paras else current
+            count = sum(len(p.split()) for p in current)
 
         current.append(para)
         count += len(words)
@@ -72,9 +61,7 @@ def chunk_text(paragraphs: List[str], max_words: int = 600) -> List[str]:
         chunks.append(" ".join(current))
     return chunks
 
-
 def save_chunks(chunks: List[str], title: str, out_dir: Path) -> Path:
-    """Save chunks to reduced/<sanitized_title>_transcript_reduced.txt"""
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{title}_transcript_reduced.txt"
 
@@ -87,28 +74,22 @@ def save_chunks(chunks: List[str], title: str, out_dir: Path) -> Path:
     print(f"[+] Wrote {len(chunks)} chunks to {out_path}")
     return out_path
 
-
 def main():
     import argparse
-
-    parser = argparse.ArgumentParser(description="Reduce YouTube transcript for summarization.")
-    parser.add_argument("input_json", help="Path to transcript JSON file")
-    parser.add_argument("--words", type=int, default=600, help="Approximate words per chunk")
-    parser.add_argument("--outdir", default="reduced", help="Directory to save reduced text files")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_json")
+    # Bumped default to 3000 to utilize LLM context better
+    parser.add_argument("--words", type=int, default=3000)
+    parser.add_argument("--outdir", default="reduced")
     args = parser.parse_args()
 
     input_path = Path(args.input_json)
-    out_dir = Path(args.outdir)
-
-    # Automatically extract the title from the input filename 
-    # (e.g., 'Video_Title_transcript.json' -> 'Video_Title')
     title = input_path.stem.replace("_transcript", "")
 
     transcript = load_transcript(input_path)
     paragraphs = merge_segments(transcript)
     chunks = chunk_text(paragraphs, max_words=args.words)
-    save_chunks(chunks, title, out_dir)
-
+    save_chunks(chunks, title, Path(args.outdir))
 
 if __name__ == "__main__":
     main()
