@@ -1,139 +1,132 @@
 ---
 
-# YouTube → Anki Flashcards Pipeline (V2)
+# 🧠 YouTube-to-Anki Flashcards Pipeline (V2.1)
 
-A high-performance, modular system that transforms YouTube lectures and playlists into professional Anki decks. This version features advanced **Cognitive Science-driven prompting** and utilizes the latest **Gemma 4** models for superior flashcard quality.
-
-The system uses a **Google-First, Mistral-Fallback** architecture, ensuring 99.9% reliability even when hitting API rate limits.
+A robust, "zero-loss" pipeline designed to transform long-form YouTube lectures into high-quality, atomic Anki flashcards. This system leverages the reasoning power of **Gemma 4 31B** and the reliability of a **Mistral Large** fallback to ensure you never lose progress during batch processing.
 
 ---
 
-## 🚀 Key Improvements in V2
+## ✨ Features
 
-### 🧠 Cognitive Science SRS Engine
+### 🛡️ Resilience & Robustness
 
-Unlike standard summaries, the new flashcard stage (`summarize_flashcards_anki.py`) enforces:
+* **Smart Caching (`video_cache.json`)**: Remembers `Video ID -> Title` mappings to skip redundant YouTube metadata fetches.
+* **Auto-Resume**: Automatically detects existing files in your `transcripts/`, `summaries/`, or `apkg/` folders and skips completed steps.
+* **Comprehensive Logging**: Dual-stream logging to the terminal and `pipeline.log` for debugging long playlist runs.
+* **Dependency-Proof Fallback**: Mistral integration uses a raw REST API (`urllib`) to bypass local virtual environment package conflicts.
 
-* **The Atomicity Rule**: One memory trace per card.
-* **The Contrast Principle**: Automatic generation of cards that differentiate similar concepts.
-* **The "Why" Over "What"**: Causal encoding that prioritizes logic over rote memorization.
-* **The No-Pronoun Rule**: Every card is a standalone unit of knowledge.
+### 🎓 Educational Excellence
 
-### 🤖 Gemma 4 & Mistral Large Integration
-
-* **Primary Model**: `gemma-4-31b-it` (Google GenAI) — Optimized for educational reasoning.
-* **Fallback Model**: `mistral-large-latest` — Professional-grade fallback for high-volume playlist processing.
-* **Safety Bypass**: Custom safety settings (`BLOCK_NONE`) to prevent educational/medical content from being flagged.
-
-### 🐧 Linux & Cross-Platform Optimization
-
-* **Divergent Branch Handling**: Full support for syncing between Windows and Linux environments.
-* **zsh/bash Compatible**: Handles IDs starting with hyphens (`-`) using the `--` delimiter.
-* **Headless Ready**: Optimized for terminal-only environments.
+* **SRS-Driven Prompting**: Enforces **Atomicity**, **Causality** ("Why" over "What"), and **Contrast** (differentiating similar terms).
+* **Gemma 4 Reasoning**: Uses the `gemma-4-31b-it` model for superior logical deduction and strict formatting adherence.
+* **Atomic Card Design**: Ensures every card tests exactly one memory trace, preventing the "interference" effect during study.
 
 ---
 
-## 🟣 Workflow Stages
+## 🛠️ Technical Stack
 
-1. **Stage 1 (Fetch)**: Retrieves transcript JSON and sanitized titles via `yt-dlp`.
-2. **Stage 2 (Reduce)**: Cleans filler text and merges fragments into coherent 600-word paragraphs.
-3. **Stage 3 (Summarize)**: Generates high-school level explanations for every chunk of the lecture.
-4. **Stage 4 (Flashcards)**: Applies SRS principles to the summaries to create `Question||DELIM||Answer` pairs.
-5. **Stage 5 (Package)**: Injects CSS (Gontserrat fonts, purple accents) and creates `.apkg` files.
+| Component | Technology | Purpose |
+| --- | --- | --- |
+| **Environment** | `uv` | High-speed Python package & project management |
+| **Scraper** | `yt-dlp` | Metadata and transcript (VTT/JSON3) extraction |
+| **Logic (Primary)** | `Gemma 4 31B` | High-precision reasoning and SRS encoding |
+| **Logic (Fallback)** | `Mistral Large` | Reliable REST-based fallback for high-volume tasks |
+| **Packager** | `genanki` | Binary `.apkg` generation with custom CSS styling |
 
 ---
 
-## 🛠 Installation
+## 🚀 Installation & Setup
 
-### 1. Clone & Setup
+### 1. Environment Initialization
+
+This project is optimized for `uv`. If you don't have it, install it via your package manager or `curl`.
 
 ```bash
-git clone <repo_url>
-cd youtubeToFlashcards
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
+# Clone the repository
+cd docs/programmingProjects/youtubeToFlashcards
+
+# Sync the environment
+uv sync
 
 ```
 
-### 2. Dependencies
-
-```bash
-pip install -r requirements.txt
-
-```
-
-### 3. Environment Configuration
+### 2. Configuration
 
 Create a `.env` file in the root directory:
 
 ```bash
-GOOGLE_API_KEY=your_google_genai_key
-MISTRAL_API_KEY=your_mistral_key
+GOOGLE_API_KEY="your_google_key"
+MISTRAL_API_KEY="your_mistral_key"
 
 ```
 
 ---
 
-## 📖 Usage
+## 📖 Usage Guide
 
-### Single Video
+The `pipeline.py` is the central driver. It handles the flow from URL to Anki deck.
+
+### Standard Playlist Processing
 
 ```bash
-python pipeline.py --video "https://www.youtube.com/watch?v=VIDEO_ID"
+uv run pipeline.py --playlist "https://youtube.com/..." --cookies ~/downloads/cookies.txt
 
 ```
 
-### Entire Playlists (Hierarchical Decks)
+### Resume from a Specific Video
 
-The pipeline will create one master deck with each video as a sub-deck.
+If your laptop shuts off during Video 5 of 10:
 
 ```bash
-python pipeline.py --playlist "https://youtube.com/playlist?list=PLAYLIST_ID"
+uv run pipeline.py --playlist "..." --playlist_start 5
 
 ```
 
-### Partial Playlist Sync
+### Force-Run Specific Steps
+
+Steps: 1:Fetch | 2:Reduce | 3:Summarize | 4:Flashcards | 5:Package
 
 ```bash
-python pipeline.py --playlist <url> --playlist_start 5 --playlist_end 10
-
-```
-
-### Resume from Failure
-
-If an API fails during the flashcard stage, you don't need to re-fetch the transcript:
-
-```bash
-python pipeline.py --video <id> --start_step 4
+# Only re-run flashcard generation and packaging
+uv run pipeline.py --video "VIDEO_ID" --start_step 4
 
 ```
 
 ---
 
-## 📁 Output Structure
+## 📂 Project Structure
 
 ```text
-transcripts/   → Raw JSON data
-reduced/       → Processed text chunks
-summaries/     → Multi-chunk AI summaries
-flashcardTxt/  → Raw Question||DELIM||Answer files
-apkg/          → Final importable Anki Decks
+.
+├── pipeline.py            # Main orchestration logic
+├── scripts/               # Modular processing scripts
+│   ├── fetch_transcript.py
+│   ├── reduce_transcript.py
+│   ├── llm.py             # Summarization layer
+│   ├── summarize_flashcards_anki.py
+│   └── anki_packager_tabbed.py
+├── video_cache.json       # Smart cache (ID -> Title)
+├── pipeline.log           # Full execution history
+├── transcripts/           # Raw JSON data
+├── summaries/             # AI Context chunks
+└── apkg/                  # Final importable decks
 
 ```
 
 ---
 
-## 🎨 UI & Styling
+## 🎨 Anki Styling
 
-The generated cards feature a custom design:
+Decks generated by this pipeline feature a custom CSS theme:
 
-* **Fonts**: Gontserrat Bold (Questions) & Light (Answers).
-* **Color Palette**: Deep purple (`#8C5DA7`) headers with lavender (`#B89FE6`) accents.
-* **Layout**: Centered, shadow-boxed cards with HTML formatting (`<b>`, `<i>`).
+* **Visuals**: Deep purple (`#8C5DA7`) headers with lavender (`#B89FE6`) accents.
+* **Typography**: Optimized for the **Gontserrat** font family (Bold/Light).
+* **Hierarchical Decks**: Playlists are automatically organized as `Playlist Name::Video Title`.
 
 ---
 
 ## 📜 License
 
-MIT License — Free to use for personal education and open-source projects.
+MIT — Go forth and learn.
 
+---
