@@ -11,16 +11,15 @@ def sanitize_filename(name: str) -> str:
     name = re.sub(r'[\\/:*?"<>|]+', "", name)
     name = re.sub(r"\s+", "_", name)
     return name
-
 def vtt_to_json(vtt_content):
-    """Line-by-line parser with fuzzy deduplication for scrolling transcripts."""
+    """Line-by-line parser with balanced deduplication."""
     segments = []
     lines = vtt_content.splitlines()
     
     current_text = []
     current_start = None
     current_end = None
-    last_added_text = "" # Tracker to prevent "scrolling" duplicates
+    last_added_text = ""
 
     def to_seconds(timestr):
         try:
@@ -34,26 +33,33 @@ def vtt_to_json(vtt_content):
 
     for line in lines:
         line = line.strip()
+        # Skip VTT headers and digits
+        if not line or line.isdigit() or "WEBVTT" in line or line.startswith("Kind:") or line.startswith("Language:"):
+            continue
+
         if "-->" in line:
-            # Process the previous segment before starting a new one
+            # Commit the PREVIOUS segment
             if current_start is not None and current_text:
                 full_text = " ".join(current_text).strip()
-                full_text = re.sub(r'<.*?>', '', full_text) # Remove internal VTT tags
+                full_text = re.sub(r'<.*?>', '', full_text)
                 
-                # DEDUPLICATION LOGIC:
-                # 1. Skip if empty
-                # 2. Skip if current text is just a fragment of the last added text
-                # 3. Skip if last added text is a fragment of the current text (rolling captions)
-                if full_text and full_text != last_added_text and last_added_text not in full_text:
-                    if not full_text.upper().startswith('NOTE '):
-                        segments.append({
-                            'text': full_text,
-                            'start': current_start,
-                            'duration': round(max(0, current_end - current_start), 3)
-                        })
-                        last_added_text = full_text
+                # IMPROVED LOGIC:
+                # 1. Don't add if it's empty
+                # 2. Don't add if it's a NOTE
+                # 3. Only skip if the new text is a fragment of what we JUST added 
+                #    OR if the last added text is a fragment of this one (scrolling)
+                is_duplicate = (full_text == last_added_text) or \
+                               (last_added_text and last_added_text in full_text and len(full_text) > len(last_added_text))
+
+                if full_text and not full_text.upper().startswith('NOTE ') and not is_duplicate:
+                    segments.append({
+                        'text': full_text,
+                        'start': current_start,
+                        'duration': round(max(0, current_end - current_start), 3)
+                    })
+                    last_added_text = full_text
             
-            # Parse new timestamps
+            # Start tracking NEW segment
             try:
                 times = line.split("-->")
                 current_start = to_seconds(times[0])
@@ -61,22 +67,21 @@ def vtt_to_json(vtt_content):
                 current_text = []
             except:
                 current_start = None
-        elif line and not line.isdigit() and "WEBVTT" not in line:
+        else:
+            # This is a text line
             current_text.append(line)
 
     # Final segment push
     if current_start is not None and current_text:
         full_text = " ".join(current_text).strip()
-        full_text = re.sub(r'<.*?>', '', full_text)
-        if full_text and full_text != last_added_text and last_added_text not in full_text:
+        if full_text and full_text != last_added_text:
             segments.append({
-                'text': full_text,
+                'text': re.sub(r'<.*?>', '', full_text),
                 'start': current_start,
                 'duration': round(max(0, current_end - current_start), 3)
             })
 
     return segments
-
 def json3_to_json(json3_content):
     """Converts YouTube's native JSON3 subtitle format to standard JSON."""
     data = json.loads(json3_content)
@@ -111,8 +116,10 @@ def process_video(video_id, output_dir, cookies_path=None, manual_title=None):
         "--print", "title",          
         "--no-simulate",             
         "--write-auto-subs",         
+        "--min-sleep-interval", "5",   # Wait 5 seconds between requests
+        "--max-sleep-interval", "15",  # Wait 15 seconds randomly
         "--write-subs",              
-        "--sub-langs", "en.*,en,en-US",
+        "--sub-langs", "en,en-US,en-GB,en-CA,en-AU,en-orig,en-US-orig",
         "--sub-format", "vtt/json3/best",             
         "--convert-subs", "vtt",     
         "--quiet",
